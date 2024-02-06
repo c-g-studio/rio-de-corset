@@ -5,7 +5,7 @@ export const Footer: FC = ({ ...props }) => {
     <footer className="py-4" {...props}>
       <div className="container">
         <p className="text-center text-sm text-gray-600">
-          &copy; {new Date().getFullYear()} - Next
+          &copy; {new Date().getFullYear()} - Next create app
         </p>
       </div>
     </footer>
