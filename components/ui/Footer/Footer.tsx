@@ -5,7 +5,7 @@ export const Footer: FC = ({ ...props }) => {
     <footer className="py-4" {...props}>
       <div className="container">
         <p className="text-center text-sm text-gray-600">
-          &copy; {new Date().getFullYear()} - Nex starter
+          &copy; {new Date().getFullYear()} - Nex start
         </p>
       </div>
     </footer>
