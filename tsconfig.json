@@ -28,6 +28,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "jest.setup.js"
-  ],
+, "components/i18n/LanguageChanger.js", "components/i18n/TranslationsProvider.tsx"  ],
   "exclude": ["node_modules"]
 }

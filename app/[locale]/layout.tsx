@@ -1,12 +1,12 @@
 import './globals.css';
 
-import React, { ReactNode } from 'react';
-import { Inter } from 'next/font/google';
 import { NextFont } from 'next/dist/compiled/@next/font';
+import { Inter } from 'next/font/google';
+import { ReactNode } from 'react';
 
 import { classnames } from '@/utils/classnames';
-import { Header } from '../components/ui/Header';
-import { Footer } from '../components/ui/Footer';
+import { Footer } from '../../components/ui/Footer';
+import { Header } from '../../components/ui/Header';
 
 import type { Metadata } from 'next';
 
