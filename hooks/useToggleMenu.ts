@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import { useLockBodyScroll, useMedia, useToggle } from 'react-use';
 
 const IS_MOBILE = '(max-width: 767px)';

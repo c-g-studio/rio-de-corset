@@ -1,6 +1,8 @@
 'use client';
 import i18nConfig from '@/i18nConfig';
+import Cookies from 'js-cookie';
 import { usePathname, useRouter } from 'next/navigation';
+import { ChangeEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export default function LanguageChanger() {
@@ -9,7 +11,7 @@ export default function LanguageChanger() {
   const router = useRouter();
   const currentPathname = usePathname();
 
-  const handleChange = event => {
+  const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
     const newLocale = event.target.value;
 
     // set cookie for next-i18n-router
@@ -17,8 +19,9 @@ export default function LanguageChanger() {
     const date = new Date();
     date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
     const expires = date.toUTCString();
-    // Cookies.set('NEXT_LOCALE', newLocale, { expires: expires, path: '/' });
-    document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`;
+    const expiresDate = new Date(expires);
+    Cookies.set('NEXT_LOCALE', newLocale, { expires: expiresDate, path: '/' });
+    // document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`;
 
     // redirect to the new locale path
     if (
