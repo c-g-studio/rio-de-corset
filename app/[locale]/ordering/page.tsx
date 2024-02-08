@@ -2,7 +2,6 @@ import initTranslations from '@/app/i18n';
 import TranslationsProvider from '@/components/i18n/TranslationsProvider';
 import { NextPage } from 'next/types';
 
-
 const i18nNamespaces = ['ordering'];
 
 interface NextPageProps {
@@ -17,7 +16,7 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
       locale={locale}
       resources={resources}
     >
-      <h1>{t("title")}</h1>
+      <h1>{t('title')}</h1>
     </TranslationsProvider>
   );
 };

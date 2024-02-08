@@ -32,16 +32,16 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
             <h2 className="text-2xl font-bold">{t('sub')}</h2>
             <LanguageChanger />
             <a
-               href="/product/00000000000000"
-               className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 md:text-base"
+              href="/product/00000000000000"
+              className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 md:text-base"
             >
-                Товар тест 1
+              Товар тест 1
             </a>
             <a
               href="/product/13124234324"
               className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 md:text-base"
             >
-                Товар тест 2
+              Товар тест 2
             </a>
           </div>
         </div>
