@@ -2,7 +2,6 @@ import initTranslations from '@/app/i18n';
 import LanguageChanger from '@/components/i18n/LanguageChanger';
 import TranslationsProvider from '@/components/i18n/TranslationsProvider';
 import { NextPage } from 'next/types';
-import { Form } from '../../components/ui/Form';
 
 const i18nNamespaces = ['home'];
 
@@ -32,7 +31,18 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
 
             <h2 className="text-2xl font-bold">{t('sub')}</h2>
             <LanguageChanger />
-            <Form />
+            <a
+              href="/product/00000000000000"
+              className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 md:text-base"
+            >
+              Товар тест 1
+            </a>
+            <a
+              href="/product/13124234324"
+              className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 md:text-base"
+            >
+              Товар тест 2
+            </a>
           </div>
         </div>
       </section>

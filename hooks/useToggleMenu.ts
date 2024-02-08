@@ -6,8 +6,8 @@ const IS_TABLET = '(min-width: 768px)';
 
 export const useToggleMenu = () => {
   const [isMenuOpen, toggleMenu] = useToggle(false);
-  const isMobile = useMedia(IS_MOBILE);
-  const isTablet = useMedia(IS_TABLET);
+  const isMobile = useMedia(IS_MOBILE, false);
+  const isTablet = useMedia(IS_TABLET, false);
 
   useLockBodyScroll(isMenuOpen);
 
