@@ -12,7 +12,6 @@ interface NextPageProps {
 
 const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
   const { t, resources } = await initTranslations(locale, i18nNamespaces);
-
   return (
     <TranslationsProvider
       namespaces={i18nNamespaces}
