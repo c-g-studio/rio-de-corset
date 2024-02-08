@@ -1,8 +1,9 @@
-import './globals.css';
-
+import '@/utils/generateStaticParameters';
+import { dir } from 'i18next';
 import { NextFont } from 'next/dist/compiled/@next/font';
 import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
+import './globals.css';
 
 import { classnames } from '@/utils/classnames';
 import { Footer } from '../../components/ui/Footer';
@@ -19,11 +20,12 @@ export const metadata: Metadata = {
 
 type Props = {
   children: ReactNode;
+  params: { locale: string }
 };
 
-export default function RootLayout({ children }: Props) {
+export default function RootLayout({ children, params: { locale } }: Props) {
   return (
-    <html lang="en">
+    <html lang={locale} dir={dir(locale)}>
       <body
         className={classnames(
           inter.className,
