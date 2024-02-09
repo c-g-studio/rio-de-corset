@@ -1,6 +1,6 @@
 import initTranslations from '@/app/i18n';
-import LanguageChanger from '@/components/i18n/LanguageChanger';
 import TranslationsProvider from '@/components/i18n/TranslationsProvider';
+import { Hero } from '@/components/pages/home/Hero';
 import { NextPage } from 'next/types';
 
 const i18nNamespaces = ['home'];
@@ -21,16 +21,7 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
         <div className="container">
           <div className="grid gap-10 text-center">
             <h1 className="text-3xl font-bold text-gray-700">{t('header')}</h1>
-
-            <p className="text-base text-gray-800">
-              This is a starter for Next js with Typescript, ESLint, Prettier,
-              Husky,
-              <br />
-              Tailwind CSS, React Hook Form, React Use and more.
-            </p>
-
             <h2 className="text-2xl font-bold">{t('sub')}</h2>
-            <LanguageChanger />
             <a
               href="/product/00000000000000"
               className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 md:text-base"
@@ -46,6 +37,7 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
           </div>
         </div>
       </section>
+      <Hero/>
     </TranslationsProvider>
   );
 };

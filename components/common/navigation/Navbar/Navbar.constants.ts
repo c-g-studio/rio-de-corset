@@ -2,15 +2,15 @@ import { NavbarLinkProps } from '@/components/navigation/NavbarLink';
 
 export const menuItems: NavbarLinkProps[] = [
   {
-    title: 'Link 1',
+    title: 'Corsets',
     href: '#',
   },
   {
-    title: 'Link 2',
+    title: 'Shirts',
     href: '#',
   },
   {
-    title: 'Link 3',
+    title: 'About us',
     href: '#',
   },
 ];

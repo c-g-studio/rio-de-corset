@@ -1,16 +1,20 @@
 'use client';
 
-import React, { FC } from 'react';
+import Link from 'next/link';
+import { FC } from 'react';
 
-import { IconButton } from '@/components/button/IconButton';
-import { MobileMenu } from '@/components/ui/MobileMenu';
-import { Navbar } from '@/components/navigation/Navbar';
+import { IconButton } from '@/components/common/button/IconButton';
+import { Navbar } from '@/components/common/navigation/Navbar';
+import { MobileMenu } from '@/components/layout/MobileMenu';
 import { useBrowser } from '@/hooks/useBrowser';
 import { useToggleMenu } from '@/hooks/useToggleMenu';
 
-import Logo from '@/public/vercel.svg';
+import LanguageChanger from '@/components/i18n/LanguageChanger';
+import Logo from '@/public/image/logo.svg';
 
-export const Header: FC = ({ ...props }) => {
+
+
+export const Header: FC = () => {
   const { isBrowser } = useBrowser();
   const { isMenuOpen, toggleMenu, isMobile, isTablet } = useToggleMenu();
 
@@ -18,10 +22,11 @@ export const Header: FC = ({ ...props }) => {
     <header
       className="relative border-b border-gray-300 py-6"
       role="banner"
-      {...props}
     >
       <div className="container flex items-center justify-between">
-        <Logo className="w-24" />
+        <Link href="/">
+          <Logo className="w-24" />
+          </Link>
 
         {isBrowser && isMobile && (
           <IconButton
@@ -35,7 +40,8 @@ export const Header: FC = ({ ...props }) => {
 
         {isBrowser && isMenuOpen && <MobileMenu />}
 
-        {isBrowser && isTablet && <Navbar />}
+        {isBrowser && isTablet && <Navbar classes="hidden md:flex md:w-auto md:border-none md:bg-transparent md:py-0 md:shadow-none gap-5" />}
+        <LanguageChanger />
       </div>
     </header>
   );

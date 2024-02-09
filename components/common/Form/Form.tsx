@@ -1,15 +1,15 @@
 'use client';
 
-import React, { FC } from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { FC } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
 
-import { Button } from '@/components/button/Button';
-import { Checkbox } from '@/components/form/Checkbox';
-import { Input } from '@/components/form/Input';
-import { Label } from '@/components/form/Label';
-import { TextArea } from '@/components/form/TextArea';
 import { schema } from '@/utils/validationSchema';
+import { Button } from '../button/Button';
+import { Checkbox } from '../formElements/form/Checkbox';
+import { Input } from '../formElements/form/Input';
+import { Label } from '../formElements/form/Label';
+import { TextArea } from '../formElements/form/TextArea';
 
 type Inputs = Record<string, object>;
 

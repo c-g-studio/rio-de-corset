@@ -2,7 +2,7 @@ import initTranslations from '@/app/i18n';
 import TranslationsProvider from '@/components/i18n/TranslationsProvider';
 import { NextPage } from 'next/types';
 
-const i18nNamespaces = ['shirts'];
+const i18nNamespaces = ['card'];
 
 interface NextPageProps {
   params: { locale: string; id: string };
