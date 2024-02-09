@@ -40,8 +40,8 @@ export default function LanguageChanger() {
 
   return (
     <select onChange={handleChange} value={currentLocale}>
-      <option value="uk">Ukranian</option>
-      <option value="en">English</option>
+      <option value="uk">Ua</option>
+      <option value="en">Eng</option>
     </select>
   );
 }
