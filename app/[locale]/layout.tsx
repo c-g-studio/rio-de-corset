@@ -1,17 +1,14 @@
+import TranslationsProvider from '@/components/i18n/TranslationsProvider';
+import { classnames } from '@/utils/classnames';
 import '@/utils/generateStaticParameters';
 import { dir } from 'i18next';
-import { NextFont } from 'next/dist/compiled/@next/font';
-import { Inter } from 'next/font/google';
-import { ReactNode } from 'react';
-import './globals.css';
-
-import { classnames } from '@/utils/classnames';
-import { Footer } from '../../components/ui/Footer';
-import { Header } from '../../components/ui/Header';
-
 import type { Metadata } from 'next';
-
-const inter: NextFont = Inter({ subsets: ['latin'] });
+import { ReactNode } from 'react';
+import { Footer } from '../../components/layout/Footer';
+import { Header } from '../../components/layout/Header';
+import initTranslations from '../i18n';
+import { montserrat } from './fonts';
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Next.js Starter',
@@ -23,22 +20,39 @@ type Props = {
   params: { locale: string };
 };
 
-export default function RootLayout({ children, params: { locale } }: Props) {
+export default async function RootLayout({
+  children,
+  params: { locale },
+}: Props) {
+  const localeHeader = await initTranslations(locale, ['header']);
+  const localeFooter = await initTranslations(locale, ['footer']);
   return (
     <html lang={locale} dir={dir(locale)}>
       <body
         className={classnames(
-          inter.className,
-          'flex h-full min-h-screen flex-col bg-slate-50',
+          montserrat.className,
+          'bg-slate-50 flex h-full min-h-screen flex-col',
         )}
       >
-        <Header />
+        <TranslationsProvider
+          namespaces={['header']}
+          locale={locale}
+          resources={localeHeader.resources}
+        >
+          <Header />
+        </TranslationsProvider>
 
         <main className="flex-grow" role="main">
           {children}
         </main>
 
-        <Footer />
+        <TranslationsProvider
+          namespaces={['footer']}
+          locale={locale}
+          resources={localeFooter.resources}
+        >
+          <Footer />
+        </TranslationsProvider>
       </body>
     </html>
   );

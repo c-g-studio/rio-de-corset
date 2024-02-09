@@ -1,8 +1,9 @@
 {
   "corsets": "Corsets",
-  "shirt": "Shirts",
+  "shirts": "Shirts",
   "about": "About us",
   "care": "Care Guide",
+  "delivery": "Delivery",
   "policy": "Privacy Policy",
   "offer": "PublicOffer"
 }
