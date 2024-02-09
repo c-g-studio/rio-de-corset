@@ -1,6 +1,7 @@
 import initTranslations from '@/app/i18n';
 import TranslationsProvider from '@/components/i18n/TranslationsProvider';
-import { Hero } from '@/components/pages/home/Hero';
+import { CorsetsAnimate } from '@/components/pages/home/CorsetsAnimate/CorsetsAnimate';
+import { Hero } from '@/components/pages/home/Hero/Hero';
 import { NextPage } from 'next/types';
 
 const i18nNamespaces = ['home'];
@@ -37,6 +38,7 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
           </div>
         </div>
       </section>
+      <CorsetsAnimate/>
       <Hero />
     </TranslationsProvider>
   );
