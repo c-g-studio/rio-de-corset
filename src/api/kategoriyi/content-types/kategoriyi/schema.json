@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "kategoriyis",
+  "info": {
+    "singularName": "kategoriyi",
+    "pluralName": "kategoriyis",
+    "displayName": "Категорії"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "categoty_name": {
+      "type": "string",
+      "unique": true
+    },
+    "korsetis": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::corset.corset",
+      "mappedBy": "category"
+    },
+    "sorochkis": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::shirt.shirt",
+      "mappedBy": "category"
+    }
+  }
+}

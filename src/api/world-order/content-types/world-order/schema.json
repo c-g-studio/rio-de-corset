@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "world_orders",
+  "info": {
+    "singularName": "world-order",
+    "pluralName": "world-orders",
+    "displayName": "Замоввлення по світу",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "number": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "country": {
+      "type": "string",
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "index": {
+      "type": "integer",
+      "required": true
+    },
+    "order_info": {
+      "type": "json",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
