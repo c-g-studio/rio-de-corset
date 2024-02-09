@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ukraine_orders",
+  "info": {
+    "singularName": "ukraine-order",
+    "pluralName": "ukraine-orders",
+    "displayName": "Замовлення по Україні"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "number": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "delivery_method": {
+      "type": "string",
+      "required": true
+    },
+    "department_number": {
+      "type": "string",
+      "required": true
+    },
+    "order_info": {
+      "type": "json",
+      "required": true
+    }
+  }
+}

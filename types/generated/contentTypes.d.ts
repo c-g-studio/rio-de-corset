@@ -583,6 +583,53 @@ export interface PluginContentReleasesReleaseAction
   };
 }
 
+export interface PluginI18NLocale extends Schema.CollectionType {
+  collectionName: 'i18n_locale';
+  info: {
+    singularName: 'locale';
+    pluralName: 'locales';
+    collectionName: 'locales';
+    displayName: 'Locale';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 50;
+        },
+        number
+      >;
+    code: Attribute.String & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::i18n.locale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::i18n.locale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUsersPermissionsPermission
   extends Schema.CollectionType {
   collectionName: 'up_permissions';
@@ -734,46 +781,252 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface PluginI18NLocale extends Schema.CollectionType {
-  collectionName: 'i18n_locale';
+export interface ApiCorsetCorset extends Schema.CollectionType {
+  collectionName: 'corsets';
   info: {
-    singularName: 'locale';
-    pluralName: 'locales';
-    collectionName: 'locales';
-    displayName: 'Locale';
+    singularName: 'corset';
+    pluralName: 'corsets';
+    displayName: '\u041A\u043E\u0440\u0441\u0435\u0442\u0438';
     description: '';
   };
   options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
+    draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String &
-      Attribute.SetMinMax<
-        {
-          min: 1;
-          max: 50;
-        },
-        number
-      >;
-    code: Attribute.String & Attribute.Unique;
+    name_uk: Attribute.String & Attribute.Required;
+    size_text_uk: Attribute.String;
+    description_uk: Attribute.Text & Attribute.Required;
+    pice_uk: Attribute.Float & Attribute.Required;
+    name_en: Attribute.String & Attribute.Required;
+    size_text_en: Attribute.String & Attribute.Required;
+    description_en: Attribute.Text;
+    price_en: Attribute.Float;
+    preview: Attribute.Media & Attribute.Required;
+    slides: Attribute.Media & Attribute.Required;
+    category: Attribute.Relation<
+      'api::corset.corset',
+      'manyToOne',
+      'api::kategoriyi.kategoriyi'
+    >;
+    size: Attribute.Relation<
+      'api::corset.corset',
+      'manyToOne',
+      'api::rozmiri.rozmiri'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'plugin::i18n.locale',
+      'api::corset.corset',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'plugin::i18n.locale',
+      'api::corset.corset',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiKategoriyiKategoriyi extends Schema.CollectionType {
+  collectionName: 'kategoriyis';
+  info: {
+    singularName: 'kategoriyi';
+    pluralName: 'kategoriyis';
+    displayName: '\u041A\u0430\u0442\u0435\u0433\u043E\u0440\u0456\u0457';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    categoty_name: Attribute.String & Attribute.Unique;
+    korsetis: Attribute.Relation<
+      'api::kategoriyi.kategoriyi',
+      'oneToMany',
+      'api::corset.corset'
+    >;
+    sorochkis: Attribute.Relation<
+      'api::kategoriyi.kategoriyi',
+      'oneToMany',
+      'api::shirt.shirt'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::kategoriyi.kategoriyi',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::kategoriyi.kategoriyi',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRozmiriRozmiri extends Schema.CollectionType {
+  collectionName: 'rozmiris';
+  info: {
+    singularName: 'rozmiri';
+    pluralName: 'rozmiris';
+    displayName: '\u0420\u043E\u0437\u043C\u0456\u0440\u0438';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    size_abbr: Attribute.String & Attribute.Unique;
+    korsetis: Attribute.Relation<
+      'api::rozmiri.rozmiri',
+      'oneToMany',
+      'api::corset.corset'
+    >;
+    sorochkis: Attribute.Relation<
+      'api::rozmiri.rozmiri',
+      'oneToMany',
+      'api::shirt.shirt'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::rozmiri.rozmiri',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::rozmiri.rozmiri',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiShirtShirt extends Schema.CollectionType {
+  collectionName: 'shirts';
+  info: {
+    singularName: 'shirt';
+    pluralName: 'shirts';
+    displayName: '\u0421\u043E\u0440\u043E\u0447\u043A\u0438';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name_uk: Attribute.String & Attribute.Required;
+    name_en: Attribute.String & Attribute.Required;
+    size_text_uk: Attribute.String & Attribute.Required;
+    size_text_en: Attribute.String & Attribute.Required;
+    description_uk: Attribute.Text & Attribute.Required;
+    description_en: Attribute.Text & Attribute.Required;
+    price_en: Attribute.Float;
+    preview: Attribute.Media & Attribute.Required;
+    slides: Attribute.Media & Attribute.Required;
+    category: Attribute.Relation<
+      'api::shirt.shirt',
+      'manyToOne',
+      'api::kategoriyi.kategoriyi'
+    >;
+    size: Attribute.Relation<
+      'api::shirt.shirt',
+      'manyToOne',
+      'api::rozmiri.rozmiri'
+    >;
+    pice_uk: Attribute.Float & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::shirt.shirt',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::shirt.shirt',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiUkraineOrderUkraineOrder extends Schema.CollectionType {
+  collectionName: 'ukraine_orders';
+  info: {
+    singularName: 'ukraine-order';
+    pluralName: 'ukraine-orders';
+    displayName: '\u0417\u0430\u043C\u043E\u0432\u043B\u0435\u043D\u043D\u044F \u043F\u043E \u0423\u043A\u0440\u0430\u0457\u043D\u0456';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    number: Attribute.String & Attribute.Required;
+    email: Attribute.Email & Attribute.Required;
+    city: Attribute.String & Attribute.Required;
+    delivery_method: Attribute.String & Attribute.Required;
+    department_number: Attribute.String & Attribute.Required;
+    order_info: Attribute.JSON & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::ukraine-order.ukraine-order',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::ukraine-order.ukraine-order',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiWorldOrderWorldOrder extends Schema.CollectionType {
+  collectionName: 'world_orders';
+  info: {
+    singularName: 'world-order';
+    pluralName: 'world-orders';
+    displayName: '\u0417\u0430\u043C\u043E\u0432\u0432\u043B\u0435\u043D\u043D\u044F \u043F\u043E \u0441\u0432\u0456\u0442\u0443';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    number: Attribute.String & Attribute.Required;
+    email: Attribute.Email & Attribute.Required;
+    country: Attribute.String & Attribute.Required;
+    city: Attribute.String & Attribute.Required;
+    index: Attribute.Integer & Attribute.Required;
+    order_info: Attribute.JSON & Attribute.Required;
+    address: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::world-order.world-order',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::world-order.world-order',
       'oneToOne',
       'admin::user'
     > &
@@ -795,10 +1048,16 @@ declare module '@strapi/types' {
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
+      'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'plugin::i18n.locale': PluginI18NLocale;
+      'api::corset.corset': ApiCorsetCorset;
+      'api::kategoriyi.kategoriyi': ApiKategoriyiKategoriyi;
+      'api::rozmiri.rozmiri': ApiRozmiriRozmiri;
+      'api::shirt.shirt': ApiShirtShirt;
+      'api::ukraine-order.ukraine-order': ApiUkraineOrderUkraineOrder;
+      'api::world-order.world-order': ApiWorldOrderWorldOrder;
     }
   }
 }

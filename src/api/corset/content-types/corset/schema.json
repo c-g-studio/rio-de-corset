@@ -1,0 +1,79 @@
+{
+  "kind": "collectionType",
+  "collectionName": "corsets",
+  "info": {
+    "singularName": "corset",
+    "pluralName": "corsets",
+    "displayName": "Корсети",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name_uk": {
+      "type": "string",
+      "required": true
+    },
+    "size_text_uk": {
+      "type": "string"
+    },
+    "description_uk": {
+      "type": "text",
+      "required": true
+    },
+    "pice_uk": {
+      "type": "float",
+      "required": true
+    },
+    "name_en": {
+      "type": "string",
+      "required": true
+    },
+    "size_text_en": {
+      "type": "string",
+      "required": true
+    },
+    "description_en": {
+      "type": "text"
+    },
+    "price_en": {
+      "type": "float"
+    },
+    "preview": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slides": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::kategoriyi.kategoriyi",
+      "inversedBy": "korsetis"
+    },
+    "size": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::rozmiri.rozmiri",
+      "inversedBy": "korsetis"
+    }
+  }
+}
