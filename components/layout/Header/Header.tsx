@@ -12,21 +12,16 @@ import { useToggleMenu } from '@/hooks/useToggleMenu';
 import LanguageChanger from '@/components/i18n/LanguageChanger';
 import Logo from '@/public/image/logo.svg';
 
-
-
 export const Header: FC = () => {
   const { isBrowser } = useBrowser();
   const { isMenuOpen, toggleMenu, isMobile, isTablet } = useToggleMenu();
 
   return (
-    <header
-      className="relative border-b border-gray-300 py-6"
-      role="banner"
-    >
+    <header className="relative border-b border-gray-300 py-6" role="banner">
       <div className="container flex items-center justify-between">
         <Link href="/">
           <Logo className="w-24" />
-          </Link>
+        </Link>
 
         {isBrowser && isMobile && (
           <IconButton
@@ -40,7 +35,9 @@ export const Header: FC = () => {
 
         {isBrowser && isMenuOpen && <MobileMenu />}
 
-        {isBrowser && isTablet && <Navbar classes="hidden md:flex md:w-auto md:border-none md:bg-transparent md:py-0 md:shadow-none gap-5" />}
+        {isBrowser && isTablet && (
+          <Navbar classes="hidden md:flex md:w-auto md:border-none md:bg-transparent md:py-0 md:shadow-none gap-5" />
+        )}
         <LanguageChanger />
       </div>
     </header>

@@ -1,7 +1,7 @@
 import React, { DetailedHTMLProps, ForwardedRef, forwardRef } from 'react';
 
 import { classnames } from '@/utils/classnames';
-import { ErrorMessage } from '@/components/form/ErrorMessage';
+import { ErrorMessage } from '../ErrorMessage';
 
 interface TextAreaProps
   extends DetailedHTMLProps<

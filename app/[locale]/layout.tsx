@@ -10,7 +10,6 @@ import initTranslations from '../i18n';
 import { montserrat } from './fonts';
 import './globals.css';
 
-
 export const metadata: Metadata = {
   title: 'Next.js Starter',
   description: 'A starter for Next.js projects.',
@@ -21,7 +20,10 @@ type Props = {
   params: { locale: string };
 };
 
-export default async function RootLayout({ children, params: { locale } }: Props) {
+export default async function RootLayout({
+  children,
+  params: { locale },
+}: Props) {
   const localeHeader = await initTranslations(locale, ['header']);
   const localeFooter = await initTranslations(locale, ['footer']);
   return (
@@ -35,9 +37,10 @@ export default async function RootLayout({ children, params: { locale } }: Props
         <TranslationsProvider
           namespaces={['header']}
           locale={locale}
-          resources={localeHeader.resources}>
-            <Header />
-          </TranslationsProvider>
+          resources={localeHeader.resources}
+        >
+          <Header />
+        </TranslationsProvider>
 
         <main className="flex-grow" role="main">
           {children}
@@ -46,8 +49,9 @@ export default async function RootLayout({ children, params: { locale } }: Props
         <TranslationsProvider
           namespaces={['footer']}
           locale={locale}
-          resources={localeFooter.resources}>
-            <Footer />
+          resources={localeFooter.resources}
+        >
+          <Footer />
         </TranslationsProvider>
       </body>
     </html>

@@ -1,7 +1,10 @@
 import { FC } from 'react';
 
 import { menuItems } from '@/components/common/navigation/Navbar/Navbar.constants';
-import { NavbarLink, NavbarLinkProps } from '@/components/common/navigation/NavbarLink';
+import {
+  NavbarLink,
+  NavbarLinkProps,
+} from '@/components/common/navigation/NavbarLink';
 
 export const MobileMenu: FC = () => {
   return (

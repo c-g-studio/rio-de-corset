@@ -1,8 +1,8 @@
-import React, { ForwardedRef, forwardRef } from 'react';
+import { ForwardedRef, forwardRef } from 'react';
 
 import { classnames } from '@/utils/classnames';
 
-import { InputProps } from '@/components/form/Input';
+import { InputProps } from '../Input';
 
 export const Checkbox = forwardRef(
   (

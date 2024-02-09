@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 import { classnames } from '@/utils/classnames';
 
-import { ButtonProps } from '@/components/button/Button';
+import { ButtonProps } from '../Button';
 
 export const IconButton: FC<ButtonProps> = ({
   children,

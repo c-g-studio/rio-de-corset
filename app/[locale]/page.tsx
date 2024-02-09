@@ -37,7 +37,7 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
           </div>
         </div>
       </section>
-      <Hero/>
+      <Hero />
     </TranslationsProvider>
   );
 };
