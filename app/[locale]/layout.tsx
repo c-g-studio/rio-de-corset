@@ -31,7 +31,7 @@ export default async function RootLayout({
       <body
         className={classnames(
           montserrat.className,
-          'flex h-full min-h-screen flex-col bg-slate-50',
+          'bg-slate-50 flex h-full min-h-screen flex-col',
         )}
       >
         <TranslationsProvider

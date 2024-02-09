@@ -5,7 +5,7 @@ export const ErrorMessage: FC<{
 }> = ({ children }) => {
   return (
     <span
-      className="absolute -bottom-5 left-0 text-xs text-rose-500"
+      className="text-rose-500 absolute -bottom-5 left-0 text-xs"
       role="alert"
     >
       {children}

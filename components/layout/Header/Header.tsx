@@ -17,7 +17,7 @@ export const Header: FC = () => {
   const { isMenuOpen, toggleMenu, isMobile, isTablet } = useToggleMenu();
 
   return (
-    <header className="relative border-b border-gray-300 py-6" role="banner">
+    <header className="border-gray-300 relative border-b py-6" role="banner">
       <div className="container flex items-center justify-between">
         <Link href="/">
           <Logo className="w-24" />
@@ -25,7 +25,7 @@ export const Header: FC = () => {
 
         {isBrowser && isMobile && (
           <IconButton
-            className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            className="text-gray-700 hover:bg-gray-100 px-4 py-2 text-sm"
             type="button"
             onClick={toggleMenu}
           >

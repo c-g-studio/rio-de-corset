@@ -21,24 +21,24 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
       <section className="pb-40 pt-40">
         <div className="container">
           <div className="grid gap-10 text-center">
-            <h1 className="text-3xl font-bold text-gray-700">{t('header')}</h1>
+            <h1 className="text-gray-700 text-3xl font-bold">{t('header')}</h1>
             <h2 className="text-2xl font-bold">{t('sub')}</h2>
             <a
               href="/product/00000000000000"
-              className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 md:text-base"
+              className="text-gray-700 hover:bg-gray-100 px-4 py-2 text-sm md:text-base"
             >
               Товар тест 1
             </a>
             <a
               href="/product/13124234324"
-              className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 md:text-base"
+              className="text-gray-700 hover:bg-gray-100 px-4 py-2 text-sm md:text-base"
             >
               Товар тест 2
             </a>
           </div>
         </div>
       </section>
-      <CorsetsAnimate/>
+      <CorsetsAnimate />
       <Hero />
     </TranslationsProvider>
   );

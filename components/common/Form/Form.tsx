@@ -66,7 +66,7 @@ export const Form: FC = () => {
         </div>
 
         <Button
-          className="rounded-md bg-indigo-500 px-5 py-3 font-bold text-white transition duration-300 ease-in-out hover:bg-indigo-600"
+          className="bg-indigo-500 text-white hover:bg-indigo-600 rounded-md px-5 py-3 font-bold transition duration-300 ease-in-out"
           type="submit"
         >
           Submit
