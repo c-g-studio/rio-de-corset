@@ -805,12 +805,12 @@ export interface ApiCorsetCorset extends Schema.CollectionType {
     slides: Attribute.Media & Attribute.Required;
     category: Attribute.Relation<
       'api::corset.corset',
-      'manyToOne',
+      'oneToOne',
       'api::kategoriyi.kategoriyi'
     >;
     size: Attribute.Relation<
       'api::corset.corset',
-      'manyToOne',
+      'oneToOne',
       'api::rozmiri.rozmiri'
     >;
     createdAt: Attribute.DateTime;
@@ -837,22 +837,13 @@ export interface ApiKategoriyiKategoriyi extends Schema.CollectionType {
     singularName: 'kategoriyi';
     pluralName: 'kategoriyis';
     displayName: '\u041A\u0430\u0442\u0435\u0433\u043E\u0440\u0456\u0457';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     categoty_name: Attribute.String & Attribute.Unique;
-    korsetis: Attribute.Relation<
-      'api::kategoriyi.kategoriyi',
-      'oneToMany',
-      'api::corset.corset'
-    >;
-    sorochkis: Attribute.Relation<
-      'api::kategoriyi.kategoriyi',
-      'oneToMany',
-      'api::shirt.shirt'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -877,22 +868,13 @@ export interface ApiRozmiriRozmiri extends Schema.CollectionType {
     singularName: 'rozmiri';
     pluralName: 'rozmiris';
     displayName: '\u0420\u043E\u0437\u043C\u0456\u0440\u0438';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     size_abbr: Attribute.String & Attribute.Unique;
-    korsetis: Attribute.Relation<
-      'api::rozmiri.rozmiri',
-      'oneToMany',
-      'api::corset.corset'
-    >;
-    sorochkis: Attribute.Relation<
-      'api::rozmiri.rozmiri',
-      'oneToMany',
-      'api::shirt.shirt'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -917,6 +899,7 @@ export interface ApiShirtShirt extends Schema.CollectionType {
     singularName: 'shirt';
     pluralName: 'shirts';
     displayName: '\u0421\u043E\u0440\u043E\u0447\u043A\u0438';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -931,17 +914,17 @@ export interface ApiShirtShirt extends Schema.CollectionType {
     price_en: Attribute.Float;
     preview: Attribute.Media & Attribute.Required;
     slides: Attribute.Media & Attribute.Required;
+    pice_uk: Attribute.Float & Attribute.Required;
     category: Attribute.Relation<
       'api::shirt.shirt',
-      'manyToOne',
+      'oneToOne',
       'api::kategoriyi.kategoriyi'
     >;
     size: Attribute.Relation<
       'api::shirt.shirt',
-      'manyToOne',
+      'oneToOne',
       'api::rozmiri.rozmiri'
     >;
-    pice_uk: Attribute.Float & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

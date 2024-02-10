@@ -65,15 +65,13 @@
     },
     "category": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::kategoriyi.kategoriyi",
-      "inversedBy": "korsetis"
+      "relation": "oneToOne",
+      "target": "api::kategoriyi.kategoriyi"
     },
     "size": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::rozmiri.rozmiri",
-      "inversedBy": "korsetis"
+      "relation": "oneToOne",
+      "target": "api::rozmiri.rozmiri"
     }
   }
 }
