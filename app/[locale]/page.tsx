@@ -11,14 +11,14 @@ interface NextPageProps {
 }
 
 const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
-  const { t, resources } = await initTranslations(locale, i18nNamespaces);
+  const { resources } = await initTranslations(locale, i18nNamespaces);
   return (
     <TranslationsProvider
       namespaces={i18nNamespaces}
       locale={locale}
       resources={resources}
     >
-      <section className="pb-40 pt-40">
+      {/* <section className="pb-40 pt-40">
         <div className="container">
           <div className="grid gap-10 text-center">
             <h1 className="text-gray-700 text-3xl font-bold">{t('header')}</h1>
@@ -37,7 +37,7 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
             </a>
           </div>
         </div>
-      </section>
+      </section> */}
       <CorsetsAnimate />
       <Hero />
     </TranslationsProvider>
