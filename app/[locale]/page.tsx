@@ -27,7 +27,7 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
               href="/product/00000000000000"
               className="text-gray-700 hover:bg-gray-100 px-4 py-2 text-sm md:text-base"
             >
-              Товар тест 1
+              Проверочка
             </a>
             <a
               href="/product/13124234324"
