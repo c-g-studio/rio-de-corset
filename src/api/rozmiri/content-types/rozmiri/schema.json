@@ -4,7 +4,8 @@
   "info": {
     "singularName": "rozmiri",
     "pluralName": "rozmiris",
-    "displayName": "Розміри"
+    "displayName": "Розміри",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,18 +15,6 @@
     "size_abbr": {
       "type": "string",
       "unique": true
-    },
-    "korsetis": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::corset.corset",
-      "mappedBy": "size"
-    },
-    "sorochkis": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::shirt.shirt",
-      "mappedBy": "size"
     }
   }
 }

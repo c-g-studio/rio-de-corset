@@ -46,7 +46,7 @@ module.exports = createCoreController(
                <p>Місто: ${city}</p>
                <p>Спосіб доставки: ${delivery_method}</p>
                <p>Номер відділення: ${department_number}</p>
-               <h3>Замовленні товари</h3>
+               <h3>Замовленні   товари</h3>
                ${order}
                `,
       };

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "kategoriyi",
     "pluralName": "kategoriyis",
-    "displayName": "Категорії"
+    "displayName": "Категорії",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,18 +15,6 @@
     "categoty_name": {
       "type": "string",
       "unique": true
-    },
-    "korsetis": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::corset.corset",
-      "mappedBy": "category"
-    },
-    "sorochkis": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::shirt.shirt",
-      "mappedBy": "category"
     }
   }
 }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "shirt",
     "pluralName": "shirts",
-    "displayName": "Сорочки"
+    "displayName": "Сорочки",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -39,42 +40,40 @@
       "type": "float"
     },
     "preview": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
-    },
-    "slides": {
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
+      ]
+    },
+    "slides": {
       "type": "media",
       "multiple": true,
-      "required": true
-    },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::kategoriyi.kategoriyi",
-      "inversedBy": "sorochkis"
-    },
-    "size": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::rozmiri.rozmiri",
-      "inversedBy": "sorochkis"
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "pice_uk": {
       "type": "float",
       "required": true
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::kategoriyi.kategoriyi"
+    },
+    "size": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::rozmiri.rozmiri"
     }
   }
 }
