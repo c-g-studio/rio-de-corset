@@ -12,7 +12,7 @@ interface NextPageProps {
 }
 
 const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
-  const { t, resources } = await initTranslations(locale, i18nNamespaces);
+  // const { t, resources } = await initTranslations(locale, i18nNamespaces);
 //   const data = {
 //     "data": {
 //         "name": "test user",
