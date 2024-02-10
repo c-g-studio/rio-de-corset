@@ -18,14 +18,14 @@ const config: Config = {
       },
     },
     keyframes: {
-        rowAnim: {
-          from: { transform: 'translateX(0)' },
-          to: { transform: 'translateX(-100%)' },
-        },
-        colAnim: {
-          from: { transform: 'translateY(0)' },
-          to: { transform: 'translateY(-100%)' },
-        }
+      rowAnim: {
+        from: { transform: 'translateX(0)' },
+        to: { transform: 'translateX(-100%)' },
+      },
+      colAnim: {
+        from: { transform: 'translateY(0)' },
+        to: { transform: 'translateY(-100%)' },
+      },
     },
     screens: {
       sm: '375px',
