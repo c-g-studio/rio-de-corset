@@ -1,5 +1,6 @@
 import initTranslations from '@/app/i18n';
 import TranslationsProvider from '@/components/i18n/TranslationsProvider';
+import { Corsets } from '@/components/pages/home/Corsets/Corsets';
 import { CorsetsAnimate } from '@/components/pages/home/CorsetsAnimate/CorsetsAnimate';
 import { Hero } from '@/components/pages/home/Hero/Hero';
 import { NextPage } from 'next/types';
@@ -75,7 +76,8 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
         </div>
       </section> */}
       <CorsetsAnimate />
-      <Hero />
+      <Hero locale={locale} />
+      <Corsets locale={locale} />
     </TranslationsProvider>
   );
 };

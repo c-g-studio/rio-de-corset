@@ -15,6 +15,8 @@ export const metadata: Metadata = {
   description: 'A starter for Next.js projects.',
 };
 
+
+
 type Props = {
   children: ReactNode;
   params: { locale: string };

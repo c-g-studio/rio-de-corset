@@ -3,10 +3,10 @@ import { FC } from 'react';
 
 export const CorsetsAnimate: FC = () => {
   return (
-    <section className="sm:pb-20 sm:pt-12 md:pb-12 md:pt-8 lg:pb-[202px] lg:pt-[105px]">
-      <div className="container flex sm:h-[420px] sm:flex-row md:h-auto md:flex-col">
-        <div className="flex justify-between gap-5 overflow-hidden sm:flex-col md:flex-row">
-          <ul className="flex shrink-0 justify-between sm:animate-[colAnim_30s_linear_infinite] sm:flex-col md:animate-[rowAnim_30s_linear_infinite] md:flex-row">
+    <section className="fixed z-[-1] mt-[108px] w-[100%] pb-20 md:mt-[126px] md:pb-12 lg:mt-[200px] lg:pb-[202px]">
+      <div className="container flex h-[420px] sm:flex-row md:h-auto md:flex-col">
+        <div className="flex flex-col justify-between gap-5 overflow-hidden md:flex-row">
+          <ul className="flex shrink-0 animate-[colAnim_30s_linear_infinite] flex-col justify-between md:animate-[rowAnim_30s_linear_infinite] md:flex-row">
             <li className="shrink-0">
               <Image
                 src="/image/corsetsAnimate/top/01.png"
@@ -62,7 +62,7 @@ export const CorsetsAnimate: FC = () => {
               />
             </li>
           </ul>
-          <ul className="flex shrink-0 justify-between sm:animate-[colAnim_30s_linear_infinite] sm:flex-col md:animate-[rowAnim_30s_linear_infinite] md:flex-row">
+          <ul className="flex shrink-0 animate-[colAnim_30s_linear_infinite] flex-col justify-between md:animate-[rowAnim_30s_linear_infinite] md:flex-row">
             <li className="shrink-0">
               <Image
                 src="/image/corsetsAnimate/top/01.png"
@@ -119,8 +119,8 @@ export const CorsetsAnimate: FC = () => {
             </li>
           </ul>
         </div>
-        <div className="flex justify-between gap-5 overflow-hidden sm:flex-col md:flex-row">
-          <ul className="flex shrink-0 justify-between sm:animate-[colAnim_30s_linear_infinite_reverse] sm:flex-col md:animate-[rowAnim_30s_linear_infinite_reverse] md:flex-row">
+        <div className="flex flex-col justify-between gap-5 overflow-hidden md:flex-row">
+          <ul className="flex shrink-0 animate-[colAnim_30s_linear_infinite_reverse] flex-col justify-between md:animate-[rowAnim_30s_linear_infinite_reverse] md:flex-row">
             <li className="shrink-0">
               <Image
                 src="/image/corsetsAnimate/bottom/01.png"
@@ -176,7 +176,7 @@ export const CorsetsAnimate: FC = () => {
               />
             </li>
           </ul>
-          <ul className="flex shrink-0 justify-between sm:animate-[colAnim_30s_linear_infinite_reverse] sm:flex-col md:animate-[rowAnim_30s_linear_infinite_reverse] md:flex-row">
+          <ul className="flex shrink-0 animate-[colAnim_30s_linear_infinite_reverse] flex-col justify-between md:animate-[rowAnim_30s_linear_infinite_reverse] md:flex-row">
             <li className="shrink-0">
               <Image
                 src="/image/corsetsAnimate/bottom/01.png"
