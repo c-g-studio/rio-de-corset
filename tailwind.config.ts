@@ -41,6 +41,7 @@ const config: Config = {
       pressColor: '#5F6A18',
       selectBgc: '#5F6A18',
       blackColor: '#000000',
+      whiteColor: '#ffffff',
       orderMenuBgc: '#AEAEAE',
       placeholderColor: '#989898',
       notValidBorder: '#D54747',

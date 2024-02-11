@@ -1,8 +1,17 @@
-import { Inter, Montserrat } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
+import localFont from 'next/font/local';
 
-export const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
+export const introcondblack = localFont({
+  src: [
+    {
+      path: '/fonts/introcondblackfree.otf',
+      weight: '900',
+    },
+    {
+      path: '/fonts/introcondlightfree.otf',
+      weight: '300',
+    },
+  ],
 });
 
 export const montserrat = Montserrat({
