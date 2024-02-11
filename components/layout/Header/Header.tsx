@@ -19,7 +19,7 @@ export const Header: FC = () => {
 
   return (
     <header
-      className=" border-gray-300 bg-whiteColor fixed z-[11] w-[100%] border-b py-2"
+      className=" border-gray-300 fixed z-[11] w-[100%] border-b bg-whiteColor py-2"
       role="banner"
     >
       <div className="container flex items-center justify-between">

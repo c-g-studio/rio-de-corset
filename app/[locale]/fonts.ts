@@ -5,13 +5,13 @@ export const introcondblack = localFont({
   src: [
     {
       path: '/fonts/introcondblackfree.otf',
-      weight:'900'
+      weight: '900',
     },
     {
       path: '/fonts/introcondlightfree.otf',
-      weight:'300'
-    }
-  ]
+      weight: '300',
+    },
+  ],
 });
 
 export const montserrat = Montserrat({
