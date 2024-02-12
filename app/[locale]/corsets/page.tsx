@@ -39,8 +39,13 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
                 />
                 <div>
                   <div>
-                    <h3>asd</h3>
-                    <span>фыв</span>
+                    <h3>{object.attributes.name_uk}</h3>
+                    <span>
+                      <span>
+                        {object.attributes.size.data.attributes.size_abbr}
+                      </span>
+                      <span>{object.attributes.pice_uk}</span>
+                    </span>
                   </div>
                   <svg className="fill-transparent h-[24px] w-[24px] stroke-blackColor  transition-colors duration-300 ease-in group-hover:stroke-activeColor  ">
                     <use href="/image/icons.svg#icon-shopping-cart"></use>
