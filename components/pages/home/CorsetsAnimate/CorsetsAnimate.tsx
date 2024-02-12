@@ -13,7 +13,7 @@ export const CorsetsAnimate: FC = () => {
                 width={208}
                 height={183}
                 alt="corset"
-                className="sm:w-[160px]"
+                className="sm:w-[160px] md:w-[208px]"
               />
             </li>
             <li className="shrink-0">
