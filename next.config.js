@@ -3,6 +3,17 @@ const nextConfig = {
   reactStrictMode: true,
 
   images: {
+    // loader: 'custom',
+    // loaderFile: './ImageLoader.js',
+    domains: ['localhost'],
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '1337',
+      },
+    ],
+
     formats: ['image/webp'],
   },
 
