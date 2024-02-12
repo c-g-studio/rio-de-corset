@@ -26,7 +26,6 @@ export const Header: FC = () => {
         <Link href="/" className="hidden  md:block">
           <Logo className="w-24 w-[78px]" />
         </Link>
-
         {isBrowser && isMobile && (
           <IconButton
             className="text-gray-700 hover:bg-gray-100 px-4 py-2 text-sm"
@@ -44,7 +43,17 @@ export const Header: FC = () => {
             <NavList classes="flex gap-8" />
           </Navbar>
         )}
-        <LanguageChanger />
+        <div className="flex items-center gap-4">
+          <LanguageChanger />
+          <button className="group flex items-center">
+            <span className="mr-[-2px] flex h-[14px] w-[14px] items-center justify-center rounded-full bg-blackColor text-[11px] font-extrabold uppercase text-whiteColor transition-colors duration-300 ease-in group-hover:bg-activeColor">
+              0
+            </span>
+            <svg className="h-[24px] w-[24px] stroke-blackColor transition-colors duration-300 ease-in group-hover:stroke-activeColor	">
+              <use href="/image/icons.svg#icon-shopping-cart"></use>
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
   );

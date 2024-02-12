@@ -20,11 +20,11 @@ const config: Config = {
     keyframes: {
       rowAnim: {
         from: { transform: 'translateX(0)' },
-        to: { transform: 'translateX(-100%)' },
+        to: { transform: 'translateX(calc(-100% - 20px))' },
       },
       colAnim: {
         from: { transform: 'translateY(0)' },
-        to: { transform: 'translateY(-100%)' },
+        to: { transform: 'translateY(calc(-100% - 20px))' },
       },
     },
     screens: {
@@ -38,6 +38,7 @@ const config: Config = {
       mainBgc: '#FEFEFE',
       activeColor: '#9EB315',
       activeCardColor: '#E7E7E7',
+      transparent: 'transparent',
       pressColor: '#5F6A18',
       selectBgc: '#5F6A18',
       blackColor: '#000000',
