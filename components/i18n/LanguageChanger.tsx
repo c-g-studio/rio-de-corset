@@ -73,7 +73,7 @@ export default function LanguageChanger() {
                           key={person.id}
                           value={person}
                           disabled={person.unavailable}
-                          className=" ui-active:bg-activeColor rounded px-1 tracking-[0.04em] transition-colors hover:bg-activeColor focus:bg-activeColor"
+                          className=" rounded px-1 tracking-[0.04em] transition-colors hover:bg-activeColor focus:bg-activeColor ui-active:bg-activeColor"
                         >
                           {person.value}
                         </Listbox.Option>

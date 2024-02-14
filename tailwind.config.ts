@@ -37,7 +37,7 @@ const config: Config = {
       secondText: '#FEFEFE',
       mainBgc: '#FEFEFE',
       activeColor: '#9EB315',
-      mainSelectColor:'#e0ec8f',
+      mainSelectColor: '#e0ec8f',
       activeCardColor: '#E7E7E7',
       transparent: 'transparent',
       pressColor: '#5F6A18',
