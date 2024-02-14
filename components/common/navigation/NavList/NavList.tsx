@@ -14,7 +14,7 @@ export const NavList: FC<NavbarProps> = ({ classes }) => {
       <li>
         <Link
           href="/corsets"
-          className="text-base font-normal uppercase text-blackColor"
+          className="text-base  font-normal uppercase text-blackColor transition-colors hover:text-activeColor focus:text-activeColor active:text-activeColor active:underline"
         >
           {t('corsets')}
         </Link>
@@ -22,7 +22,7 @@ export const NavList: FC<NavbarProps> = ({ classes }) => {
       <li>
         <Link
           href="/shirts"
-          className="text-base font-normal uppercase text-blackColor"
+          className=" text-base font-normal uppercase text-blackColor transition-colors hover:text-activeColor focus:text-activeColor active:text-activeColor active:underline"
         >
           {t('shirts')}
         </Link>
@@ -30,7 +30,7 @@ export const NavList: FC<NavbarProps> = ({ classes }) => {
       <li>
         <Link
           href="/about"
-          className="text-base font-normal uppercase text-blackColor"
+          className="text-base  font-normal uppercase text-blackColor transition-colors hover:text-activeColor focus:text-activeColor active:text-activeColor active:underline"
         >
           {t('about')}
         </Link>
@@ -38,7 +38,7 @@ export const NavList: FC<NavbarProps> = ({ classes }) => {
       <li>
         <Link
           href="/care"
-          className="text-base font-normal uppercase text-blackColor"
+          className="text-base  font-normal uppercase text-blackColor transition-colors hover:text-activeColor focus:text-activeColor active:text-activeColor active:underline"
         >
           {t('care')}
         </Link>
@@ -46,7 +46,7 @@ export const NavList: FC<NavbarProps> = ({ classes }) => {
       <li>
         <Link
           href="/delivery"
-          className="text-base font-normal uppercase text-blackColor"
+          className="text-base  font-normal uppercase text-blackColor transition-colors hover:text-activeColor focus:text-activeColor active:text-activeColor active:underline"
         >
           {t('delivery')}
         </Link>

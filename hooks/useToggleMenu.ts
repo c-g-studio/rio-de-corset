@@ -11,7 +11,7 @@ export const useToggleMenu = () => {
   const isTablet = useMedia(IS_TABLET, false);
   const isDesctop = useMedia(IS_DESCTOP, false);
 
-  useLockBodyScroll(isMenuOpen);
+  useLockBodyScroll(isMenuOpen && isMobile);
 
   return { isMenuOpen, toggleMenu, isMobile, isTablet, isDesctop };
 };
