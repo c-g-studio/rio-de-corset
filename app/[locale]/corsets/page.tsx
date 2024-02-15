@@ -1,19 +1,28 @@
+'use client';
 import initTranslations from '@/app/i18n';
 import TranslationsProvider from '@/components/i18n/TranslationsProvider';
-import { NextPage } from 'next/types';
+import { ProductList } from '@/components/common/ProductList/ProductList';
 import { productsAPI } from '@/services/productsAPI';
-import { ProductCard } from '@/components/common/ProductCard/ProductCard';
-import { сorsetAttributes as corsetAttributes } from '@/types/сorsetAttributes';
+import { useState, useEffect } from 'react';
 
 const i18nNamespaces = ['corsets'];
 
 interface NextPageProps {
   params: { locale: string };
 }
+type TranslationFunction = (key: string) => string;
 
-const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
-  const { t, resources } = await initTranslations(locale, i18nNamespaces);
-  const response = await productsAPI.getCorsets(locale);
+const Page = ({ params: { locale } }: NextPageProps) => {
+  const [t, setT] = useState<TranslationFunction | null>(null);
+  const [resources, setResources] = useState();
+
+  useEffect(() => {
+    (async () => {
+      const { t, resources } = await initTranslations(locale, i18nNamespaces);
+      setT(() => t);
+      setResources(() => resources);
+    })();
+  }, [locale]);
 
   return (
     <TranslationsProvider
@@ -21,27 +30,14 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
       locale={locale}
       resources={resources}
     >
-      <section className="pt-[134px]">
+      <section className="mb-6 mt-[84px] md:mt-[126px] lg:mb-[140px] lg:mt-[134px]">
         <div className="container">
-          <h1 className="text-center">[ {t('title')} ]</h1>
-          <ul>
-            {response.data.data.map(
-              ({
-                id,
-                attributes,
-              }: {
-                id: string;
-                attributes: corsetAttributes;
-              }) => (
-                <ProductCard
-                  key={id}
-                  id={id}
-                  attributes={attributes}
-                  locale={locale}
-                />
-              ),
-            )}
-          </ul>
+          {t && <h1 className=" text-center">[ {t('title')} ]</h1>}
+          <ProductList
+            locale={locale}
+            getProducts={productsAPI.getCorsets}
+            category="corsets"
+          />
         </div>
       </section>
     </TranslationsProvider>

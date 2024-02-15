@@ -1,7 +1,7 @@
 import axios from 'axios';
 axios.defaults.baseURL = 'http://localhost:1337';
 
-const getCorsets = async (locale: string, pageSize = 6) => {
+const getCorsets = async (locale: string, pageSize = 12) => {
   return await axios.get(
     `/api/corsets?locale=${locale}&populate=preview,slides,size,category&pagination[pageSize]=${pageSize}`,
   );
