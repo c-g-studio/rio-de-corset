@@ -31,7 +31,7 @@ export const ProductCard: FC<{
             </span>
           </div>
           <button type="button">
-            <svg className="fill-transparent h-[24px] w-[24px] stroke-blackColor  transition-colors duration-300 ease-in group-hover:stroke-activeColor  ">
+            <svg className="h-[24px] w-[24px] fill-transparent stroke-blackColor  transition-colors duration-300 ease-in group-hover:stroke-activeColor  ">
               <use href="/image/icons.svg#icon-shopping-cart"></use>
             </svg>
           </button>
