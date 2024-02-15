@@ -15,46 +15,63 @@ import Logo from '@/public/image/logo.svg';
 
 export const Header: FC = () => {
   const { isBrowser } = useBrowser();
-  const { isMenuOpen, toggleMenu, isMobile, isDesctop } = useToggleMenu();
+  const { isMenuOpen, toggleMenu, isDesctop } = useToggleMenu();
+  const classes = isMenuOpen
+    ? 'translate-x-[100%] md:translate-x-[-480px] opacity-100'
+    : 'md:translate-x-[0] opacity-0';
 
   return (
-    <header
-      className=" border-gray-300 fixed z-[11] w-[100%] border-b bg-whiteColor py-2"
-      role="banner"
-    >
-      <div className="container flex items-center justify-between">
-        <Link href="/" className="hidden  md:block">
-          <Logo className="w-24 w-[78px]" />
-        </Link>
-        {isBrowser && isMobile && (
-          <IconButton
-            className="text-gray-700 hover:bg-gray-100 px-4 py-2 text-sm"
-            type="button"
-            onClick={toggleMenu}
-          >
-            {isMenuOpen ? 'Close' : 'Menu'}
-          </IconButton>
-        )}
+    <>
+      <header
+        className="fixed z-[11] w-[100%] bg-whiteColor py-[14px] md:py-2	"
+        role="banner"
+      >
+        <div className="container flex items-center justify-between">
+          <Link href="/" className="hidden  md:block">
+            <Logo className="w-[78px]" />
+          </Link>
 
-        {isBrowser && isMenuOpen && <MobileMenu />}
-
-        {isBrowser && isDesctop && (
-          <Navbar>
-            <NavList classes="flex gap-8" />
-          </Navbar>
-        )}
-        <div className="flex items-center gap-4">
-          <LanguageChanger />
-          <button className="group flex items-center">
-            <span className="mr-[-2px] flex h-[14px] w-[14px] items-center justify-center rounded-full bg-blackColor text-[11px] font-extrabold uppercase text-whiteColor transition-colors duration-300 ease-in group-hover:bg-activeColor">
-              0
-            </span>
-            <svg className="h-[24px] w-[24px] stroke-blackColor transition-colors duration-300 ease-in group-hover:stroke-activeColor	">
-              <use href="/image/icons.svg#icon-shopping-cart"></use>
-            </svg>
-          </button>
+          {isBrowser && isDesctop && (
+            <Navbar>
+              <NavList
+                classes="flex gap-8"
+                classesLink="text-base font-normal uppercase text-blackColor transition-colors hover:text-activeColor focus:text-activeColor active:text-activeColor active:underline"
+              />
+            </Navbar>
+          )}
+          <div className="flex w-[100%] items-center justify-between	md:w-auto md:gap-[24px] lg:gap-4">
+            <LanguageChanger />
+            <button className="group order-3 ml-4 flex items-center md:ml-0">
+              <span className="linear mr-[-2px] flex h-[14px] w-[14px] items-center justify-center rounded-full bg-blackColor text-[11px] font-extrabold uppercase text-whiteColor transition-colors duration-300 group-hover:bg-activeColor">
+                0
+              </span>
+              <svg className="linear h-[24px] w-[24px] stroke-blackColor transition-colors duration-300 group-hover:stroke-activeColor	">
+                <use href="/image/icons.svg#icon-shopping-cart"></use>
+              </svg>
+            </button>
+            {isBrowser && !isDesctop && (
+              <IconButton
+                className="text-gray-700 hover:bg-gray-100 order-1  text-sm md:order-3	md:mr-0"
+                type="button"
+                onClick={toggleMenu}
+              >
+                {isMenuOpen ? (
+                  <svg className="linear h-8 w-8 stroke-blackColor transition-colors duration-300 group-hover:stroke-activeColor md:h-[24px] md:w-[24px]	">
+                    <use href="/image/icons.svg#icon-x"></use>
+                  </svg>
+                ) : (
+                  <svg className="linear h-8 w-8 stroke-blackColor transition-colors duration-300 group-hover:stroke-activeColor md:h-[24px] md:w-[24px]	">
+                    <use href="/image/icons.svg#icon-menu"></use>
+                  </svg>
+                )}
+              </IconButton>
+            )}
+          </div>
         </div>
-      </div>
-    </header>
+        {isBrowser && !isDesctop && (
+          <MobileMenu toggleMenu={toggleMenu} classes={classes} />
+        )}
+      </header>
+    </>
   );
 };
