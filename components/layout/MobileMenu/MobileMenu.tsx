@@ -34,7 +34,10 @@ export const MobileMenu: FC<MobileMenuProps> = ({ toggleMenu, classes }) => {
       </IconButton>
 
       <Navbar>
-        <NavList classes="flex gap-8 flex-col items-center" />
+        <NavList
+          classes="flex gap-8 flex-col items-center"
+          classesLink="text-base font-normal uppercase text-blackColor transition-colors hover:text-activeColor focus:text-activeColor active:text-activeColor active:underline"
+        />
       </Navbar>
     </div>
   );

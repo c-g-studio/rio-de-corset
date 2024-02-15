@@ -5,49 +5,35 @@ import { useTranslation } from 'react-i18next';
 
 type NavbarProps = {
   classes: string;
+  classesLink: string;
 };
-export const NavList: FC<NavbarProps> = ({ classes }) => {
+export const NavList: FC<NavbarProps> = ({ classes, classesLink }) => {
   const { t } = useTranslation();
 
   return (
     <ul className={classes}>
       <li>
-        <Link
-          href="/corsets"
-          className="text-base  font-normal uppercase text-blackColor transition-colors hover:text-activeColor focus:text-activeColor active:text-activeColor active:underline"
-        >
+        <Link href="/corsets" className={classesLink}>
           {t('corsets')}
         </Link>
       </li>
       <li>
-        <Link
-          href="/shirts"
-          className=" text-base font-normal uppercase text-blackColor transition-colors hover:text-activeColor focus:text-activeColor active:text-activeColor active:underline"
-        >
+        <Link href="/shirts" className={classesLink}>
           {t('shirts')}
         </Link>
       </li>
       <li>
-        <Link
-          href="/about"
-          className="text-base  font-normal uppercase text-blackColor transition-colors hover:text-activeColor focus:text-activeColor active:text-activeColor active:underline"
-        >
+        <Link href="/about" className={classesLink}>
           {t('about')}
         </Link>
       </li>
       <li>
-        <Link
-          href="/care"
-          className="text-base  font-normal uppercase text-blackColor transition-colors hover:text-activeColor focus:text-activeColor active:text-activeColor active:underline"
-        >
+        <Link href="/care" className={classesLink}>
           {t('care')}
         </Link>
       </li>
       <li>
-        <Link
-          href="/delivery"
-          className="text-base  font-normal uppercase text-blackColor transition-colors hover:text-activeColor focus:text-activeColor active:text-activeColor active:underline"
-        >
+        <Link href="/delivery" className={classesLink}>
           {t('delivery')}
         </Link>
       </li>

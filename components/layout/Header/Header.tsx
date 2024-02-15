@@ -33,7 +33,10 @@ export const Header: FC = () => {
 
           {isBrowser && isDesctop && (
             <Navbar>
-              <NavList classes="flex gap-8" />
+              <NavList
+                classes="flex gap-8"
+                classesLink="text-base font-normal uppercase text-blackColor transition-colors hover:text-activeColor focus:text-activeColor active:text-activeColor active:underline"
+              />
             </Navbar>
           )}
           <div className="flex w-[100%] items-center justify-between	md:w-auto md:gap-[24px] lg:gap-4">
