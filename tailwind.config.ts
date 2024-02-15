@@ -25,7 +25,7 @@ const config: Config = {
       colAnim: {
         from: { transform: 'translateY(0)' },
         to: { transform: 'translateY(calc(-100% - 20px))' },
-      }
+      },
     },
     screens: {
       sm: '375px',
