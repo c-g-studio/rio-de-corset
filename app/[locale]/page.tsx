@@ -76,7 +76,7 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
         </div>
       </section> */}
       <CorsetsAnimate />
-      <Hero locale={locale} />
+      <Hero />
       <Corsets locale={locale} />
     </TranslationsProvider>
   );
