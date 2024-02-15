@@ -37,6 +37,7 @@ const config: Config = {
       secondText: '#FEFEFE',
       mainBgc: '#FEFEFE',
       activeColor: '#9EB315',
+      mainSelectColor: '#e0ec8f',
       activeCardColor: '#E7E7E7',
       transparent: 'transparent',
       pressColor: '#5F6A18',
@@ -49,6 +50,6 @@ const config: Config = {
       notValidBgc: '#FFE8E8',
     },
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [require('@tailwindcss/forms'), require('@headlessui/tailwindcss')],
 };
 export default config;
