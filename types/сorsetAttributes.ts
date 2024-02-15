@@ -1,4 +1,4 @@
-export type сorsetAttributes = {
+export type corsetAttributes = {
   name_uk: string;
   size_text_uk: string;
   description_uk: string;
