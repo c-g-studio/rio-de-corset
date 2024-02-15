@@ -3,7 +3,7 @@ import { FC, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useInView } from 'react-intersection-observer';
 
-export const Corsets: FC = () => {
+export const Shirts: FC = () => {
   const { t } = useTranslation();
   const [viewString, setViewString] = useState('');
   const { ref, inView } = useInView({
@@ -13,7 +13,7 @@ export const Corsets: FC = () => {
   });
 
   useEffect(() => {
-    const string = t('corsets');
+    const string = t('shirts');
     setViewString('');
     let intervalId: NodeJS.Timeout;
     let index = -1;
@@ -34,8 +34,9 @@ export const Corsets: FC = () => {
 
     return () => clearInterval(intervalId);
   }, [inView, t]);
+
   return (
-    <section className="mt-[1264px] bg-whiteColor pb-[30px] pt-[60px] md:mt-[1016px] md:pb-[50px] md:pt-[100px] lg:mt-[1485px] lg:pb-[70px] lg:pt-[140px]">
+    <section className="bg-whiteColor pb-[60px] pt-[30px] md:pb-[100px] md:pt-[50px] lg:pb-[140px] lg:pt-[70px]">
       <div className="container">
         <h2
           ref={ref}

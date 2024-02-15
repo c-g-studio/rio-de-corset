@@ -15,19 +15,24 @@ export const Hero: FC = () => {
 
   useEffect(() => {
     const string = t('update');
+    setViewString('');
     let intervalId: NodeJS.Timeout;
+    let index = -1;
+    const arrayString = [...string];
+
     const addLetters = () => {
-      let index = -1;
       intervalId = setInterval(() => {
-        if (index < string.length - 1) {
-          setViewString(previousState => previousState + string[index]);
-          index += 1;
+        index += 1;
+        if (index <= arrayString.length - 1) {
+          setViewString(previousState => previousState + arrayString[index]);
         } else {
           clearInterval(intervalId);
         }
       }, 100);
     };
+
     inView && addLetters();
+
     return () => clearInterval(intervalId);
   }, [inView, t]);
 

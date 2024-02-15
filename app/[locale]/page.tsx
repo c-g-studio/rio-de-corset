@@ -3,6 +3,7 @@ import TranslationsProvider from '@/components/i18n/TranslationsProvider';
 import { Corsets } from '@/components/pages/home/Corsets/Corsets';
 import { CorsetsAnimate } from '@/components/pages/home/CorsetsAnimate/CorsetsAnimate';
 import { Hero } from '@/components/pages/home/Hero/Hero';
+import { Shirts } from '@/components/pages/home/Shirts/Shirts';
 import { NextPage } from 'next/types';
 // import { ordersAPI } from '@/services/ordersAPI'
 
@@ -77,7 +78,8 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
       </section> */}
       <CorsetsAnimate />
       <Hero />
-      <Corsets locale={locale} />
+      <Corsets />
+      <Shirts />
     </TranslationsProvider>
   );
 };
