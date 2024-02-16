@@ -1,9 +1,15 @@
 'use client';
+import Link from 'next/link';
 import { FC, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useInView } from 'react-intersection-observer';
+import { ShirtsList } from './ShirtsList';
 
-export const Shirts: FC = () => {
+interface CorsetsProps {
+  locale: string;
+}
+
+export const Shirts: FC<CorsetsProps> = ({ locale }) => {
   const { t } = useTranslation();
   const [viewString, setViewString] = useState('');
   const { ref, inView } = useInView({
@@ -44,7 +50,13 @@ export const Shirts: FC = () => {
         >
           [ {viewString} ]
         </h2>
-        <ul></ul>
+        <ShirtsList locale={locale} />
+        <Link
+          href="/shirts"
+          className="block text-center text-lg text-blackColor underline transition-colors hover:text-activeColor focus:text-activeColor active:text-selectBgc"
+        >
+          дивитись більше
+        </Link>
       </div>
     </section>
   );

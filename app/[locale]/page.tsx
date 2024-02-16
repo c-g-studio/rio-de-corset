@@ -6,6 +6,7 @@ import { Hero } from '@/components/pages/home/Hero/Hero';
 import { Shirts } from '@/components/pages/home/Shirts/Shirts';
 import { NextPage } from 'next/types';
 // import { ordersAPI } from '@/services/ordersAPI'
+// import { productsAPI } from '@/services/productsAPI';
 
 const i18nNamespaces = ['home'];
 
@@ -78,8 +79,8 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
       </section> */}
       <CorsetsAnimate />
       <Hero />
-      <Corsets />
-      <Shirts />
+      <Corsets locale={locale} />
+      <Shirts locale={locale} />
     </TranslationsProvider>
   );
 };
