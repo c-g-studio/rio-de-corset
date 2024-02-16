@@ -2,7 +2,6 @@
 import initTranslations from '@/app/i18n';
 import TranslationsProvider from '@/components/i18n/TranslationsProvider';
 import { ProductList } from '@/components/common/ProductList/ProductList';
-import { productsAPI } from '@/services/productsAPI';
 import { AnimateTitle } from '@/components/common/AnimateTitle/AnimateTitle';
 import { useState, useEffect } from 'react';
 
