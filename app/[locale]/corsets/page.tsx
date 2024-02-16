@@ -3,6 +3,7 @@ import initTranslations from '@/app/i18n';
 import TranslationsProvider from '@/components/i18n/TranslationsProvider';
 import { ProductList } from '@/components/common/ProductList/ProductList';
 import { productsAPI } from '@/services/productsAPI';
+import { AnimateTitle } from '@/components/common/AnimateTitle/AnimateTitle';
 import { useState, useEffect } from 'react';
 
 const i18nNamespaces = ['corsets'];
@@ -32,10 +33,10 @@ const Page = ({ params: { locale } }: NextPageProps) => {
     >
       <section className="mb-6 mt-[84px] md:mt-[126px] lg:mb-[140px] lg:mt-[134px]">
         <div className="container">
-          {t && <h1 className=" text-center">[ {t('title')} ]</h1>}
+          {t && <AnimateTitle titleString={t('title')} />}
           <ProductList
             locale={locale}
-            getProducts={productsAPI.getCorsets}
+            requestType="corsets"
             category="corsets"
           />
         </div>

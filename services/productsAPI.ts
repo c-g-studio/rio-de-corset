@@ -1,9 +1,10 @@
 import axios from 'axios';
-axios.defaults.baseURL = 'http://localhost:1337';
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL;
 
-const getCorsets = async (locale: string, pageSize = 12) => {
+const getCorsets = async (locale: string, pageSize = 12, page = 1) => {
   return await axios.get(
-    `/api/corsets?locale=${locale}&populate=preview,slides,size,category&pagination[pageSize]=${pageSize}`,
+    `/api/corsets?locale=${locale}&populate=preview,slides,size,category&pagination[pageSize]=${pageSize}&pagination[page]=${page}`,
+    {},
   );
 };
 
@@ -13,9 +14,9 @@ const getCorsetById = async (id: number, locale: string) => {
   );
 };
 
-const getShirts = async (locale: string, pageSize = 6) => {
+const getShirts = async (locale: string, pageSize = 6, page = 1) => {
   return await axios.get(
-    `/api/shirts?locale=${locale}&populate=preview,slides,size,category&pagination[pageSize]=${pageSize}`,
+    `/api/shirts?locale=${locale}&populate=preview,slides,size,category&pagination[pageSize]=${pageSize}&pagination[page]=${page}`,
   );
 };
 
