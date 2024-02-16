@@ -61,7 +61,7 @@
         "audios"
       ]
     },
-    "pice_uk": {
+    "price_uk": {
       "type": "float",
       "required": true
     },

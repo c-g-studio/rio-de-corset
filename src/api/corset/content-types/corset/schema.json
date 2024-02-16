@@ -23,7 +23,7 @@
       "type": "text",
       "required": true
     },
-    "pice_uk": {
+    "price_uk": {
       "type": "float",
       "required": true
     },
