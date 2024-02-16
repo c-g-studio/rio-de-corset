@@ -796,7 +796,7 @@ export interface ApiCorsetCorset extends Schema.CollectionType {
     name_uk: Attribute.String & Attribute.Required;
     size_text_uk: Attribute.String;
     description_uk: Attribute.Text & Attribute.Required;
-    pice_uk: Attribute.Float & Attribute.Required;
+    price_uk: Attribute.Float & Attribute.Required;
     name_en: Attribute.String & Attribute.Required;
     size_text_en: Attribute.String & Attribute.Required;
     description_en: Attribute.Text;
@@ -914,7 +914,7 @@ export interface ApiShirtShirt extends Schema.CollectionType {
     price_en: Attribute.Float;
     preview: Attribute.Media & Attribute.Required;
     slides: Attribute.Media & Attribute.Required;
-    pice_uk: Attribute.Float & Attribute.Required;
+    price_uk: Attribute.Float & Attribute.Required;
     category: Attribute.Relation<
       'api::shirt.shirt',
       'oneToOne',
