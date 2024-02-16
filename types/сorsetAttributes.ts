@@ -44,7 +44,7 @@ export type corsetAttributes = {
     data: {
       id: number;
       attributes: {
-        categoty_name: string;
+        category_name: string;
       };
     };
   };

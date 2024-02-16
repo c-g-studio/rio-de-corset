@@ -7,19 +7,24 @@ import { corsetAttributes } from '@/types/сorsetAttributes';
 
 import s from './styles.module.css';
 
-export const ProductCard: FC<{
+type ProductCardProps = {
   id: number;
   attributes: corsetAttributes;
   locale: string;
   category: string;
-}> = ({ id, attributes, locale, category }) => {
+};
+
+export const ProductCard: FC<ProductCardProps> = ({
+  id,
+  attributes,
+  locale,
+  category,
+}) => {
   const [isAdded, setIsAdded] = useState(
     shoppingCardService.isProductAdded(id, category),
   );
 
-  const isAddedToggle = () => {
-    setIsAdded(() => !isAdded);
-  };
+  const isAddedToggle = () => setIsAdded(() => !isAdded);
 
   const preview = attributes.preview.data.attributes.url;
   const name = locale === 'uk' ? attributes.name_uk : attributes.name_en;
@@ -45,6 +50,7 @@ export const ProductCard: FC<{
             className="lg:w-[376px]"
           />
         </div>
+
         <div className="mb-4 flex items-center justify-between ">
           <div className="tracing-[.04em] font-medium uppercase md:text-xl lg:text-2xl">
             <h3 className="mb-1">{name}</h3>
