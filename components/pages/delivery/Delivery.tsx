@@ -1,31 +1,18 @@
+'use client';
+import { useToggleMenu } from '@/hooks/useToggleMenu';
 import Image from 'next/image';
 import { FC } from 'react';
+import { CorsetVideo } from './CorsetVideo/CorsetVideo';
 import { InfoBlock } from './InfoBlock';
+import { SliderTablet } from './SliderTablet/SliderTablet';
+
 export const Delivery: FC = () => {
+  const { isDesctop, isMobile, isTablet } = useToggleMenu();
   return (
     <section className="pb-[60px] pt-[84px] md:pb-[100px] md:pt-[126px] lg:pb-[140px] lg:pt-[134px]">
       <div className="container">
         <div className="lg:mb-[50px] lg:flex lg:gap-[50px]">
-          <picture className="hidden lg:block">
-            <source
-              srcSet="/image/delivery/desc/corset.jpg"
-              media="(min-width: 1440px)"
-            />
-            <source
-              srcSet="/image/delivery/tab/corset.jpg"
-              media="(min-width: 768px)"
-            />
-            <source
-              srcSet="/image/delivery/mob/corset.jpg"
-              media="(min-width: 480px)"
-            />
-            <img
-              src="/image/delivery/desc/corset.jpg"
-              alt="Член команди"
-              width="402"
-              height="437"
-            />
-          </picture>
+          {isDesctop && <CorsetVideo />}
           <InfoBlock />
         </div>
         <ul className="hidden justify-between lg:flex	">
@@ -57,6 +44,10 @@ export const Delivery: FC = () => {
             />
           </li>
         </ul>
+        <div className="mb-4 md:hidden">
+          {isMobile && !isTablet && !isDesctop && <CorsetVideo />}
+        </div>
+        <SliderTablet />
       </div>
     </section>
   );

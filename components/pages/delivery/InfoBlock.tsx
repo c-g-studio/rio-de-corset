@@ -29,8 +29,8 @@ export const InfoBlock: FC = () => {
     return () => clearInterval(intervalId);
   }, [t]);
   return (
-    <div className="mb-6 grow bg-activeColor p-4 md:p-6 lg:mb-0 lg:px-[52px] lg:py-[60px]">
-      <h2 className="mb-4 text-2xl/[1.67] font-light uppercase md:mb-8">
+    <div className="mb-6 grow bg-activeColor p-4 md:p-6 lg:mb-0 lg:px-[52px] lg:py-[56px]">
+      <h2 className="mb-4 text-2xl/[1.67] font-light uppercase md:mb-8 md:text-[40px]/[1.5] lg:text-[60px]/[1]">
         {viewString}
       </h2>
       <div className="md:flex md:gap-8">
@@ -72,13 +72,13 @@ export const InfoBlock: FC = () => {
           <h3 className="mb-1 text-base/[1.25] md:mb-4 md:text-xl/[1.6] lg:text-2xl/[1.33]">
             {t('ukraine')}
           </h3>
-          <p className="mb-[2px] flex gap-2 text-base/[2] text-sm/[1.29] font-light	 md:mb-2 lg:text-lg/[1.78]">
+          <p className="mb-[2px] flex gap-2 text-sm/[1.29] font-light md:mb-2 md:text-base/[2] lg:text-lg/[1.78]">
             <svg width={24} height={24} className="stroke-blackColor">
               <use href="/image/icons.svg#icon-clock"></use>
             </svg>
             <span>{t('ukrainePeriod')}</span>
           </p>
-          <p className="flex gap-2 text-sm/[1.29] font-light	 md:text-base/[2] lg:text-lg/[1.78]">
+          <p className="flex gap-2 text-sm/[1.29] font-light md:text-base/[2] lg:text-lg/[1.78]">
             <svg width={24} height={24}>
               <use href="/image/icons.svg#icon-delivery"></use>
             </svg>

@@ -1,0 +1,47 @@
+.swiper_tablet_wrapper .swiper {
+  overflow: visible;
+}
+
+.swiper_tablet_wrapper .swiper-button-prev::after {
+  content: '';
+  width: 24px;
+  height: 24px;
+  background-image: url('/image/chevron-right.svg');
+}
+
+.swiper_tablet_wrapper .swiper-button-next::after {
+  content: '';
+  width: 24px;
+  height: 24px;
+  background-image: url('/image/chevron-left.svg');
+}
+.swiper-button-prev,
+.swiper-button-next {
+  bottom: -48px;
+  top: auto;
+  width: 24px;
+  height: 24px;
+}
+.swiper-button-next {
+  right: 304px;
+}
+.swiper-button-prev {
+  left: 304px;
+}
+
+@media screen and (max-width: 767px) {
+  .swiper_tablet_wrapper .mob_hidden {
+    display: none;
+  }
+  .swiper-button-next {
+    right: 120px;
+  }
+  .swiper-button-prev {
+    left: 120px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .swiper_tablet_wrapper .tab_hidden_elem {
+    display: none;
+  }
+}
