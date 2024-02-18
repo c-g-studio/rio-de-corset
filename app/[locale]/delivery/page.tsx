@@ -1,5 +1,6 @@
 import initTranslations from '@/app/i18n';
 import TranslationsProvider from '@/components/i18n/TranslationsProvider';
+import { Delivery } from '@/components/pages/delivery/Delivery';
 import { NextPage } from 'next/types';
 
 const i18nNamespaces = ['delivery'];
@@ -9,14 +10,14 @@ interface NextPageProps {
 }
 
 const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
-  const { t, resources } = await initTranslations(locale, i18nNamespaces);
+  const { resources } = await initTranslations(locale, i18nNamespaces);
   return (
     <TranslationsProvider
       namespaces={i18nNamespaces}
       locale={locale}
       resources={resources}
     >
-      <h1>{t('title')}</h1>
+      <Delivery />
     </TranslationsProvider>
   );
 };

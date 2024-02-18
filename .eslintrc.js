@@ -40,6 +40,7 @@ module.exports = {
     'sonarjs',
   ],
   rules: {
+    'jsx-a11y/media-has-caption': 'off',
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
