@@ -1,7 +1,6 @@
 'use client';
 import { ProductCard } from '@/components/common/ProductCard/ProductCard';
 import { productsAPI } from '@/services/productsAPI';
-import { corsetsDto } from '@/types/corsetsDto';
 import { corsetAttributes } from '@/types/сorsetAttributes';
 import { AxiosResponse } from 'axios';
 import { FC, useEffect, useState } from 'react';
@@ -16,8 +15,7 @@ const IS_DESCTOP = '(min-width: 1440px)';
 
 export const CorsetsList: FC<CorsetsProps> = ({ locale }) => {
   const { t } = useTranslation();
-  const [dataCorsets, setDataCorsets] =
-    useState<AxiosResponse<corsetsDto> | null>(null);
+  const [dataCorsets, setDataCorsets] = useState<AxiosResponse | null>(null);
   const isTablet = useMedia(IS_TABLET, false);
   const isDesctop = useMedia(IS_DESCTOP, false);
   useEffect(() => {
