@@ -1,0 +1,4 @@
+.swiper_about_wrapper .swiper-slide {
+  display: flex;
+  gap: 24px;
+}

@@ -7,3 +7,7 @@
     @apply scroll-smooth;
   }
 }
+
+.no-scroll {
+  overflow-y: hidden;
+}

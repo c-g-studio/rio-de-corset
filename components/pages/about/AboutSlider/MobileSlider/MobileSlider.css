@@ -1,0 +1,15 @@
+@media screen and (max-width: 767px) {
+  .mobile_slider .swiper {
+    overflow: visible;
+  }
+}
+
+.mobile_slider .swiper-pagination {
+  bottom: -38px;
+}
+.mobile_slider .swiper-pagination-bullet-active {
+  width: 35px;
+  height: 8px;
+  background-color: black;
+  border-radius: 70px;
+}
