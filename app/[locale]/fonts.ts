@@ -4,11 +4,11 @@ import localFont from 'next/font/local';
 export const introcondblack = localFont({
   src: [
     {
-      path: '/fonts/introcondblackfree.otf',
+      path: '/fonts/IntroDemoCond-BlackCAPS.otf',
       weight: '900',
     },
     {
-      path: '/fonts/introcondlightfree.otf',
+      path: '/fonts/IntroDemoCond-LightCAPS.otf',
       weight: '300',
     },
   ],

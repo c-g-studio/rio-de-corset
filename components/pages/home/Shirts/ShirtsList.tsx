@@ -1,12 +1,10 @@
 'use client';
 import { ProductCard } from '@/components/common/ProductCard/ProductCard';
 import { productsAPI } from '@/services/productsAPI';
-import { corsetsDto } from '@/types/corsetsDto';
 import { corsetAttributes } from '@/types/сorsetAttributes';
 import { AxiosResponse } from 'axios';
 import { FC, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-
 import { useMedia } from 'react-use';
 interface ShirtsProps {
   locale: string;
@@ -16,8 +14,7 @@ const IS_DESCTOP = '(min-width: 1440px)';
 
 export const ShirtsList: FC<ShirtsProps> = ({ locale }) => {
   const { t } = useTranslation();
-  const [dataShirts, setDataShirts] =
-    useState<AxiosResponse<corsetsDto> | null>(null);
+  const [dataShirts, setDataShirts] = useState<AxiosResponse | null>(null);
   const isTablet = useMedia(IS_TABLET, false);
   const isDesctop = useMedia(IS_DESCTOP, false);
   useEffect(() => {
