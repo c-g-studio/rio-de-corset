@@ -1,9 +1,9 @@
 'use client';
 import initTranslations from '@/app/i18n';
-import TranslationsProvider from '@/components/i18n/TranslationsProvider';
-import { ProductList } from '@/components/common/ProductList/ProductList';
 import { AnimateTitle } from '@/components/common/AnimateTitle/AnimateTitle';
-import { useState, useEffect } from 'react';
+import { ProductList } from '@/components/common/ProductList/ProductList';
+import TranslationsProvider from '@/components/i18n/TranslationsProvider';
+import { useEffect, useState } from 'react';
 
 const i18nNamespaces = ['corsets'];
 
@@ -31,7 +31,7 @@ const Page = ({ params: { locale } }: NextPageProps) => {
       resources={resources}
     >
       <section className="mb-6 mt-[84px] md:mt-[126px] lg:mb-[140px] lg:mt-[134px]">
-        <div className="container">
+        <div className="container px-6 md:px-10 lg:px-16">
           {t && <AnimateTitle titleString={t('title')} />}
           <ProductList
             locale={locale}
