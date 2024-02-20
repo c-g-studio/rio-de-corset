@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { FC, MouseEventHandler } from 'react';
 
 const playVideo: MouseEventHandler<HTMLButtonElement> = event => {
-  const targetElement: EventTarget | null = event.currentTarget;
+  const targetElement: EventTarget | null = event.target;
   const videoElement =
     document.querySelector<HTMLVideoElement>('#deliveryVideo');
   if (videoElement && videoElement.paused) {

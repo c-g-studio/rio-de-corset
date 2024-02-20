@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Mousewheel, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { AboutVideo } from '../../AboutVideo/AboutVideo';
 import './MobileSlider.css';
 
 export const MobSlider: FC = () => {
@@ -70,14 +71,7 @@ export const MobSlider: FC = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="about_desc_slide">
-          <Image
-            src="/image/delivery/tab/pack.jpg"
-            width={310}
-            height={340}
-            alt="pack"
-            loading="lazy"
-            className="h-[340px] w-[100%] w-[322px]"
-          />
+          <AboutVideo />
         </SwiperSlide>
       </Swiper>
     </div>

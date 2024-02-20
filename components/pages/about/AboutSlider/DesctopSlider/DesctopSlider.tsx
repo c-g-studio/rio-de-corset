@@ -7,6 +7,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Mousewheel, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { AboutVideo } from '../../AboutVideo/AboutVideo';
 import './aboutSlider.css';
 
 export const DesctopSlider: FC = () => {
@@ -34,7 +35,7 @@ export const DesctopSlider: FC = () => {
       >
         <SwiperSlide className="w-[644px]">
           <div className="mb-6 items-center lg:mb-0 lg:flex lg:gap-6">
-            <h1 className="mb-4 text-2xl/[1.5] font-light uppercase md:mb-6 md:text-[40px]/[1.5] lg:mb-0 lg:text-6xl/[1]">
+            <h1 className="mb-4 whitespace-nowrap text-2xl/[1.5] font-light uppercase md:mb-6 md:text-[40px]/[1.5] lg:mb-0 lg:text-6xl/[1]">
               {t('title')}
             </h1>
             <Arrow className=" w-[310px] md:w-[262px] lg:w-[310px]" />
@@ -72,14 +73,7 @@ export const DesctopSlider: FC = () => {
           <div className="text-base">
             <p>{t('slideThree')}</p>
           </div>
-          <Image
-            src="/image/delivery/tab/pack.jpg"
-            width={310}
-            height={340}
-            alt="pack"
-            loading="lazy"
-            className="w-[100%] md:h-[340px] md:w-[322px]"
-          />
+          <AboutVideo />
         </SwiperSlide>
       </Swiper>
     </div>

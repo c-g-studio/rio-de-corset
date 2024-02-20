@@ -15,18 +15,18 @@ const playVideo: MouseEventHandler<HTMLButtonElement> = event => {
   }
 };
 
-export const CorsetVideo: FC = () => {
+export const AboutVideo: FC = () => {
   return (
-    <div className="relative">
+    <div className="relative shrink-0">
       <video
         width="402"
         height="437"
         preload="none"
-        poster="/image/delivery/desc/corset.jpg"
-        className="h-[566px] w-[343px] object-cover md:h-[411px] md:w-[322px] lg:h-[437px] lg:w-[402px]"
+        poster="/image/about/work.jpg"
+        className="h-[340px] w-[310px] object-cover"
         id="deliveryVideo"
       >
-        <source src="/video/corset_pack.mp4" type="video/mp4" />
+        <source src="/video/workCat.mp4" type="video/mp4" />
       </video>
       <button onClick={playVideo} className="absolute top-0 h-[100%] w-[100%]">
         <Image
