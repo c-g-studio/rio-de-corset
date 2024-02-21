@@ -48,7 +48,7 @@ const config: Config = {
       placeholderColor: '#989898',
       notValidBorder: '#D54747',
       notValidBgc: '#FFE8E8',
-      silverColor: "#606060"
+      silverColor: '#606060',
     },
   },
   plugins: [require('@tailwindcss/forms'), require('@headlessui/tailwindcss')],
