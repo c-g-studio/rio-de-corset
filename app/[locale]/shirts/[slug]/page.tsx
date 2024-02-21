@@ -1,7 +1,8 @@
 import initTranslations from '@/app/i18n';
 import TranslationsProvider from '@/components/i18n/TranslationsProvider';
+import { Card } from '@/components/pages/card/Card';
 import { NextPage } from 'next/types';
-const i18nNamespaces = ['corsets'];
+const i18nNamespaces = ['card'];
 
 interface NextPageProps {
   params: { locale: string; slug: string };
@@ -18,6 +19,12 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale, slug } }) => {
     >
       <h1 className="mt-36">{t('care')}</h1>
       <p>This product ID - {slug}</p>
+      <Card
+        locale={locale}
+        requestType="shirts"
+        category="shirts"
+        slug={slug}
+      />
     </TranslationsProvider>
   );
 };

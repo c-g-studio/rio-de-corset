@@ -1,0 +1,118 @@
+.mySwiper .swiper-slide {
+  opacity: 0.7;
+}
+div.swiper {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+.product_slider_thumb .swiper-button-prev,
+.product_slider_thumb .swiper-button-next {
+  width: 32px;
+  height: 32px;
+}
+.product_slider_thumb .swiper-button-prev::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: url('/image/card/chevron-left.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.product_slider_thumb .swiper-button-next::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: url('/image/card/chevron-right.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.product_slider_thumb .mySwiper2 .swiper-slide img {
+  width: 342px;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .product_slider_thumb .swiper-button-prev,
+  .product_slider_thumb .swiper-button-next {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .product_slider_thumb .mySwiper2 .swiper-slide img {
+    width: 470px;
+    height: 464px;
+    display: block;
+    margin: 0 auto;
+  }
+  .product_slider_thumb .mySwiper .swiper-slide img {
+    height: 146px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .product_slider_thumb .mySwiper2 {
+    width: 609px;
+  }
+  .product_slider_thumb .mySwiper2 .swiper-wrapper {
+    width: 500px;
+    height: 416px;
+  }
+
+  .product_slider_thumb .mySwiper {
+    height: 416px;
+    width: 104px;
+  }
+
+  .product_slider_thumb .mySwiper2 .swiper-slide img {
+    width: 423px;
+    height: 416px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product_slider_thumb .swiper-button-next {
+    right: 0;
+  }
+
+  .product_slider_thumb .swiper-button-prev {
+    left: 0;
+  }
+
+  .swiper-slide {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .mySwiper {
+    box-sizing: border-box;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
