@@ -42,7 +42,7 @@ export const Corsets: FC<CorsetsProps> = ({ locale }) => {
   }, [inView, t]);
   return (
     <section className="mt-[1264px] bg-whiteColor pb-[30px] pt-[60px] md:mt-[1016px] md:pb-[50px] md:pt-[100px] lg:mt-[1485px] lg:pb-[70px] lg:pt-[140px]">
-      <div className="container">
+      <div className="container px-6 md:px-10 lg:px-16">
         <h2
           ref={ref}
           className="mb-6 text-center text-[22px] font-medium uppercase tracking-[0.04em] text-blackColor md:mb-8 md:text-[28px] lg:mb-10 lg:text-[32px]"

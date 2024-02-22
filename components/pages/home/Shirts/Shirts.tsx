@@ -43,7 +43,7 @@ export const Shirts: FC<CorsetsProps> = ({ locale }) => {
 
   return (
     <section className="bg-whiteColor pb-[60px] pt-[30px] md:pb-[100px] md:pt-[50px] lg:pb-[140px] lg:pt-[70px]">
-      <div className="container">
+      <div className="container px-6 md:px-10 lg:px-16">
         <h2
           ref={ref}
           className="mb-6 text-center text-[22px] font-medium uppercase tracking-[0.04em] text-blackColor md:mb-8 md:text-[28px] lg:mb-10 lg:text-[32px]"
