@@ -1,6 +1,10 @@
 import initTranslations from '@/app/i18n';
 import TranslationsProvider from '@/components/i18n/TranslationsProvider';
 import { NextPage } from 'next/types';
+import { Form } from '@/components/common/Form';
+// import { Input } from '@/components/common/formElements/form/Input';
+// import { Button } from '@/components/common/button/Button';
+// import { Label } from '@/components/common/formElements/form/Label';
 
 const i18nNamespaces = ['ordering'];
 
@@ -16,7 +20,20 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
       locale={locale}
       resources={resources}
     >
-      <h1>{t('title')}</h1>
+      <section className="mb-[60px] mt-[84px] md:mb-[100px] md:mt-[136px] lg:mb-[140px] lg:mt-[134px]">
+        <div className="container">
+          <div>
+            <div>
+              <h1 className="mb-6 text-2xl font-medium uppercase leading-[1.67] tracking-[.04em]">
+                {t('title')}
+              </h1>
+            </div>
+            <div>
+              <Form />
+            </div>
+          </div>
+        </div>
+      </section>
     </TranslationsProvider>
   );
 };
