@@ -3,6 +3,7 @@ import { FC } from 'react';
 
 import { ProductCard } from '@/components/common/ProductCard/ProductCard';
 import { useProductList } from '@/hooks/useProductList';
+import { useTranslation } from 'react-i18next';
 
 type ProductListProps = {
   locale: string;
@@ -15,11 +16,12 @@ export const ProductList: FC<ProductListProps> = ({
   category,
   requestType,
 }) => {
-  const { response, buttonClickHandler } = useProductList({
+  const { response, buttonClickHandler, page, totalPage } = useProductList({
     locale,
     requestType,
   });
 
+  const { t } = useTranslation();
   return (
     <>
       <ul className="mb-6 flex flex-col flex-wrap gap-4 md:flex-row md:gap-8 lg:gap-[68px]">
@@ -36,12 +38,14 @@ export const ProductList: FC<ProductListProps> = ({
       </ul>
 
       <span className="flex items-center">
-        <button
-          className="text after:text-red-500 ml-auto mr-auto inline-flex flex-wrap text-center text-lg   after:inline-block after:h-[1px] after:w-full after:bg-blackColor after:content-['']"
-          onClick={buttonClickHandler}
-        >
-          load more
-        </button>
+        {page < totalPage && (
+          <button
+            className="text after:text-red-500 ml-auto mr-auto inline-flex flex-wrap text-center text-lg   after:inline-block after:h-[1px] after:w-full after:bg-blackColor after:content-['']"
+            onClick={buttonClickHandler}
+          >
+            {t('learnMore')}
+          </button>
+        )}
       </span>
     </>
   );

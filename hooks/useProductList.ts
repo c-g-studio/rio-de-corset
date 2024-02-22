@@ -25,6 +25,7 @@ export const useProductList = ({
   const [response, setResponse] = useState<CorsetsDtoProps[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isError, setIsError] = useState<boolean>(false);
+  const [totalPage, setTotalPage] = useState<number>(0);
 
   const buttonClickHandler = (): void => {
     setPage(previousState => previousState + 1);
@@ -39,8 +40,13 @@ export const useProductList = ({
       try {
         const { data: responseData } = await callback(locale, pageSize, page);
 
-        if (page === 1) return setResponse(responseData.data);
-
+        if (page === 1) {
+          setTotalPage(
+            Math.ceil(responseData.meta.pagination.total / pageSize),
+          );
+          setResponse(responseData.data);
+          return;
+        }
         setResponse(previousState => [...previousState, ...responseData.data]);
       } catch (error) {
         console.error(error);
@@ -65,5 +71,5 @@ export const useProductList = ({
     })();
   }, [fetchData, requestType]);
 
-  return { response, isError, isLoading, buttonClickHandler };
+  return { response, isError, isLoading, totalPage, page, buttonClickHandler };
 };

@@ -2,6 +2,7 @@
 import { ProductCard } from '@/components/common/ProductCard/ProductCard';
 import { productsAPI } from '@/services/productsAPI';
 import { corsetAttributes } from '@/types/сorsetAttributes';
+
 import { AxiosResponse } from 'axios';
 import { FC, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
