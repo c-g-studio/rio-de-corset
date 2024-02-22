@@ -7,7 +7,7 @@ export const CareCorset: FC = () => {
   const { t } = useTranslation();
   return (
     <>
-      <p className="text-base">
+      <p className="text-xs md:text-base ">
         {t('care')}{' '}
         <Link
           href="/care"

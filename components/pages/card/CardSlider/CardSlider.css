@@ -35,7 +35,7 @@ div.swiper {
 .product_slider_thumb .mySwiper2 .swiper-slide img {
   width: 342px;
   height: 350px;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   margin: 0 auto;
 }
@@ -58,7 +58,7 @@ div.swiper {
   .product_slider_thumb .mySwiper .swiper-slide img {
     height: 146px;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 }
 
