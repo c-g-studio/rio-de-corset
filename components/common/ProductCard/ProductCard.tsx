@@ -1,9 +1,10 @@
 'use client';
-import { FC, useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import { ContextType, GlobalContext } from '@/app/[locale]/ContextWrapper';
 import { shoppingCardService } from '@/services/shoppingCardService';
 import { corsetAttributes } from '@/types/сorsetAttributes';
+import Image from 'next/image';
+import Link from 'next/link';
+import { FC, useContext, useState } from 'react';
 
 import s from './styles.module.css';
 
@@ -25,6 +26,7 @@ export const ProductCard: FC<ProductCardProps> = ({
   );
 
   const isAddedToggle = () => setIsAdded(() => !isAdded);
+  const { setIndicatorLS } = useContext<ContextType>(GlobalContext);
 
   const preview = attributes.preview.data.attributes.url;
   const name = locale === 'uk' ? attributes.name_uk : attributes.name_en;
@@ -66,14 +68,15 @@ export const ProductCard: FC<ProductCardProps> = ({
         className={`h-7 pl-3 pr-3 ${s.cartButton} group  absolute bottom-8 right-0 z-10 md:bottom-9 lg:bottom-12`}
         onClick={() => {
           shoppingCardService.addProducts(id, category);
+          setIndicatorLS((previousState: boolean): boolean => !previousState);
           isAddedToggle();
         }}
       >
         <svg
           className={`${
             isAdded
-              ? '  stroke-activeColor'
-              : '  stroke-blackColor hover:stroke-activeColor  md:stroke-whiteColor  md:group-hover:stroke-activeColor'
+              ? 'stroke-activeColor'
+              : 'stroke-blackColor hover:stroke-activeColor  md:stroke-whiteColor  md:group-hover:stroke-activeColor'
           } h-7 w-7 fill-transparent transition-colors duration-300  ease-in   md:h-8 md:w-8  lg:h-10 lg:w-10`}
         >
           <use href="/image/icons.svg#icon-shopping-cart"></use>

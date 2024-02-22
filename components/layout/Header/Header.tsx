@@ -13,17 +13,24 @@ import { useBrowser } from '@/hooks/useBrowser';
 import { useToggleMenu } from '@/hooks/useToggleMenu';
 import Logo from '@/public/image/logo.svg';
 import { shoppingCardService } from '@/services/shoppingCardService';
+import { usePathname } from 'next/navigation';
 
 export const Header: FC = () => {
   const { isBrowser } = useBrowser();
   const { isMenuOpen, toggleMenu, isDesctop } = useToggleMenu();
   const { indicatorLS } = useContext(GlobalContext);
   const [allProduct, setAllProduct] = useState(0);
+  const pathname = usePathname();
 
   useEffect(() => {
     const { shirts, corsets } = shoppingCardService.getProducts();
     setAllProduct(shirts.length + corsets.length);
   }, [indicatorLS]);
+
+  useEffect(() => {
+    toggleMenu();
+  }, [pathname, toggleMenu]);
+
   const classes = isMenuOpen
     ? 'translate-x-[100%] md:translate-x-[-480px] opacity-100'
     : 'md:translate-x-[0] opacity-0';
