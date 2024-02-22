@@ -2,9 +2,9 @@ import initTranslations from '@/app/i18n';
 import TranslationsProvider from '@/components/i18n/TranslationsProvider';
 import { NextPage } from 'next/types';
 import { Form } from '@/components/common/Form';
-import { Input } from '@/components/common/formElements/form/Input';
-import { Button } from '@/components/common/button/Button';
-import { Label } from '@/components/common/formElements/form/Label';
+// import { Input } from '@/components/common/formElements/form/Input';
+// import { Button } from '@/components/common/button/Button';
+// import { Label } from '@/components/common/formElements/form/Label';
 
 const i18nNamespaces = ['ordering'];
 

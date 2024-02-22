@@ -1,13 +1,13 @@
 'use client';
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { FC, useEffect } from 'react';
+// import { zodResolver } from '@hookform/resolvers/zod';
+import { FC } from 'react';
 
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import { schema } from '@/utils/validationSchema';
+// import { schema } from '@/utils/validationSchema';
 import { Button } from '../button/Button';
-import { Checkbox } from '../formElements/form/Checkbox';
+// import { Checkbox } from '../formElements/form/Checkbox';
 import { Input } from '../formElements/form/Input';
 import { Label } from '../formElements/form/Label';
 
@@ -18,7 +18,6 @@ const onSubmit: SubmitHandler<Inputs> = data => console.info(data);
 export const Form: FC = () => {
   const {
     watch,
-    getValues,
     register,
     handleSubmit,
     formState: { errors },
@@ -35,7 +34,6 @@ export const Form: FC = () => {
       className="mx-auto mb-[22px] w-full max-w-md"
       onSubmit={handleSubmit(onSubmit)}
     >
-      {getValues('orderType') === t('inUkraine') && <h3>asdasd</h3>}
       <div className="mb-8">
         <h3 className="mb-2 uppercase">{t('country')}</h3>
         <Label
