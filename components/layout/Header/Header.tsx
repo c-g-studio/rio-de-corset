@@ -1,21 +1,29 @@
 'use client';
 
 import Link from 'next/link';
-import { FC } from 'react';
+import { FC, useContext, useEffect, useState } from 'react';
 
+import { GlobalContext } from '@/app/[locale]/ContextWrapper';
 import { IconButton } from '@/components/common/button/IconButton';
-import { MobileMenu } from '@/components/layout/MobileMenu';
-import { useBrowser } from '@/hooks/useBrowser';
-import { useToggleMenu } from '@/hooks/useToggleMenu';
-
 import { NavList } from '@/components/common/navigation/NavList/NavList';
 import { Navbar } from '@/components/common/navigation/Navbar';
 import LanguageChanger from '@/components/i18n/LanguageChanger';
+import { MobileMenu } from '@/components/layout/MobileMenu';
+import { useBrowser } from '@/hooks/useBrowser';
+import { useToggleMenu } from '@/hooks/useToggleMenu';
 import Logo from '@/public/image/logo.svg';
+import { shoppingCardService } from '@/services/shoppingCardService';
 
 export const Header: FC = () => {
   const { isBrowser } = useBrowser();
   const { isMenuOpen, toggleMenu, isDesctop } = useToggleMenu();
+  const { indicatorLS } = useContext(GlobalContext);
+  const [allProduct, setAllProduct] = useState(0);
+
+  useEffect(() => {
+    const { shirts, corsets } = shoppingCardService.getProducts();
+    setAllProduct(shirts.length + corsets.length);
+  }, [indicatorLS]);
   const classes = isMenuOpen
     ? 'translate-x-[100%] md:translate-x-[-480px] opacity-100'
     : 'md:translate-x-[0] opacity-0';
@@ -43,7 +51,7 @@ export const Header: FC = () => {
             <LanguageChanger />
             <button className="group order-3 ml-4 flex items-center md:ml-0">
               <span className="linear mr-[-2px] flex h-[14px] w-[14px] items-center justify-center rounded-full bg-blackColor text-[11px] font-extrabold uppercase text-whiteColor transition-colors duration-300 group-hover:bg-activeColor">
-                0
+                {allProduct}
               </span>
               <svg className="linear h-[24px] w-[24px] stroke-blackColor transition-colors duration-300 group-hover:stroke-activeColor	">
                 <use href="/image/icons.svg#icon-shopping-cart"></use>

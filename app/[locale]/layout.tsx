@@ -7,6 +7,7 @@ import { ReactNode } from 'react';
 import { Footer } from '../../components/layout/Footer';
 import { Header } from '../../components/layout/Header';
 import initTranslations from '../i18n';
+import { ContextWrapper } from './ContextWrapper';
 import { montserrat } from './fonts';
 import './globals.css';
 
@@ -26,6 +27,7 @@ export default async function RootLayout({
 }: Props) {
   const localeHeader = await initTranslations(locale, ['header']);
   const localeFooter = await initTranslations(locale, ['footer']);
+
   return (
     <html lang={locale} dir={dir(locale)}>
       <body
@@ -34,25 +36,27 @@ export default async function RootLayout({
           'bg-slate-50 flex h-full min-h-screen flex-col',
         )}
       >
-        <TranslationsProvider
-          namespaces={['header']}
-          locale={locale}
-          resources={localeHeader.resources}
-        >
-          <Header />
-        </TranslationsProvider>
+        <ContextWrapper>
+          <TranslationsProvider
+            namespaces={['header']}
+            locale={locale}
+            resources={localeHeader.resources}
+          >
+            <Header />
+          </TranslationsProvider>
 
-        <main className="flex-grow" role="main">
-          {children}
-        </main>
+          <main className="flex-grow" role="main">
+            {children}
+          </main>
 
-        <TranslationsProvider
-          namespaces={['footer']}
-          locale={locale}
-          resources={localeFooter.resources}
-        >
-          <Footer />
-        </TranslationsProvider>
+          <TranslationsProvider
+            namespaces={['footer']}
+            locale={locale}
+            resources={localeFooter.resources}
+          >
+            <Footer />
+          </TranslationsProvider>
+        </ContextWrapper>
       </body>
     </html>
   );

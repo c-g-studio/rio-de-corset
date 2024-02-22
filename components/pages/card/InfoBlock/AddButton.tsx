@@ -1,6 +1,7 @@
 'use client';
+import { ContextType, GlobalContext } from '@/app/[locale]/ContextWrapper';
 import { shoppingCardService } from '@/services/shoppingCardService';
-import { FC, useState } from 'react';
+import { FC, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 const { addProducts, isProductAdded } = shoppingCardService;
 type AddButtonProps = {
@@ -9,6 +10,7 @@ type AddButtonProps = {
 };
 
 export const AddButton: FC<AddButtonProps> = ({ id, category }) => {
+  const { setIndicatorLS } = useContext<ContextType>(GlobalContext);
   const [isAdded, setIsAdded] = useState(isProductAdded(id, category));
   const isAddedToggle = () => setIsAdded(() => !isAdded);
   const { t } = useTranslation();
@@ -17,6 +19,7 @@ export const AddButton: FC<AddButtonProps> = ({ id, category }) => {
       type="button"
       onClick={() => {
         addProducts(id, category);
+        setIndicatorLS((previousState: boolean): boolean => !previousState);
         isAddedToggle();
       }}
       id={`${id}`}

@@ -16,7 +16,6 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale, slug } }) => {
       locale={locale}
       resources={resources}
     >
-      <p>This product ID - {slug}</p>
       <Card
         locale={locale}
         requestType="corsets"
