@@ -1,9 +1,13 @@
 {
-  "careTitle": "Care Guide:",
+  "careTitle": "Care Guide",
   "care": "Can be dry cleaned or machine washed. Detailed rules can be found in the tab",
   "addTo": "Add to cart",
+  "delete": "Remove from cart",
   "chest": "chest measurement",
   "made": "Made ofLacoste polo shirt",
   "currency": "$",
-  "back": "back"
+  "back": "back",
+  "careInfo1": "Hand washing",
+  "careInfo2": "Machinewash at 40°",
+  "careInfo3": "Gentle cleaning"
 }
