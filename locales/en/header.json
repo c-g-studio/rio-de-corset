@@ -3,5 +3,10 @@
   "shirts": "Shirts",
   "about": "About us",
   "care": "Care Guide",
-  "delivery": "Delivery"
+  "delivery": "Delivery",
+  "bag": "Shopping Bag",
+  "total": "Total:",
+  "complete": "Complete Order",
+  "continue": "Continue purchase",
+  "currency": "$"
 }
