@@ -1,6 +1,7 @@
 {
   "title": "оформлення покупки",
   "country": "Країна доставки:",
+  "countryPlaceholder": "Введіть країну доставки",
   "inUkraine": "по Україні",
   "worldwide": "По світу",
   "personalData": "Ваші дані",
@@ -20,5 +21,9 @@
   "postPlaceholder": "Введіть номер відділення",
   "order": "оформити замовлення",
   "total": "Загалом:",
-  "currency": "грн"
+  "currency": "грн",
+  "index": "індекс",
+  "indexPlaceHolder": "Введіть  поштовий  індекс",
+  "address": "адреса",
+  "addressPlaceholder": "Введіть  свою адресу"
 }

@@ -2,6 +2,7 @@ import initTranslations from '@/app/i18n';
 import TranslationsProvider from '@/components/i18n/TranslationsProvider';
 import { NextPage } from 'next/types';
 import { Form } from '@/components/common/Form';
+import { Products } from '@/components/pages/ordering/Products/Products';
 // import { Input } from '@/components/common/formElements/form/Input';
 // import { Button } from '@/components/common/button/Button';
 // import { Label } from '@/components/common/formElements/form/Label';
@@ -9,7 +10,7 @@ import { Form } from '@/components/common/Form';
 const i18nNamespaces = ['ordering'];
 
 interface NextPageProps {
-  params: { locale: string };
+  params: { locale: 'en' | 'uk' };
 }
 
 const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
@@ -28,8 +29,9 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
                 {t('title')}
               </h1>
             </div>
-            <div>
+            <div className="relative lg:flex lg:max-h-[600px] lg:justify-between lg:overflow-hidden">
               <Form />
+              <Products locale={locale} />
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 {
   "title": "Placing an order",
   "country": "Delivery country:",
+  "countryPlaceholder": "Enter the delivery country",
   "inUkraine": "Delivery in Ukraine",
   "worldwide": "Worldwide shipping",
   "personalData": "Personal data",
@@ -20,5 +21,9 @@
   "postPlaceholder": "Enter the post office number",
   "order": "Place an order",
   "total": "Total:",
-  "currency": "$"
+  "currency": "$",
+  "index": "Postcode",
+  "indexPlaceHolder": "Enter the postcode",
+  "address": "address",
+  "addressPlaceholder": "Enter your address"
 }
