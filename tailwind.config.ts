@@ -49,6 +49,8 @@ const config: Config = {
       notValidBorder: '#D54747',
       notValidBgc: '#FFE8E8',
       silverColor: '#606060',
+      orderHover: 'rgba(217, 217, 217, 0.2)',
+      continueHover: 'rgba(79, 79, 79, 0.44)',
     },
   },
   plugins: [require('@tailwindcss/forms'), require('@headlessui/tailwindcss')],
