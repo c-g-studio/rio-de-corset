@@ -117,7 +117,7 @@ export const Form: FC = () => {
         </div>
       </div>
       <Button
-        className=" active:bg-activeBtn w-full border-[1px] border-solid border-blackColor py-[14px] font-medium uppercase tracking-[.04em] transition-all ease-linear hover:bg-blackColor hover:text-whiteColor active:text-whiteColor"
+        className=" w-full border-[1px] border-solid border-blackColor py-[14px] font-medium uppercase tracking-[.04em] transition-all ease-linear hover:bg-blackColor hover:text-whiteColor active:bg-activeBtn active:text-whiteColor"
         type="submit"
       >
         {t('order')}

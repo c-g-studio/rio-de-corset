@@ -119,7 +119,7 @@ export const Products: FC<ProductsProps> = ({ locale }) => {
   };
 
   return (
-    <div className="bg-greyColor overflow-y-scroll lg:w-[508px]">
+    <div className="overflow-y-scroll bg-greyColor lg:w-[508px]">
       <ul className="mb-24 flex flex-col px-3 pt-4 md:gap-4 md:px-10 md:pt-6">
         {products.map(({ id, category, name, size, price, preview }, index) => {
           return (
