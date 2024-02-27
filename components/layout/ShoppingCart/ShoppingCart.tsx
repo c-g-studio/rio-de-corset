@@ -92,7 +92,7 @@ export const ShoppingCart: FC<ShoppingCartProps> = ({ locale }) => {
           </p>
         </div>
         <ShoppingList locale={locale} totalPrice={totalPrice} />
-        <OrderBlock price={price} />
+        <OrderBlock price={price} setIsOpen={setIsOpen} />
       </div>
     </>
   );
