@@ -42,7 +42,7 @@ export default async function RootLayout({
             locale={locale}
             resources={localeHeader.resources}
           >
-            <Header />
+            <Header locale={locale} />
           </TranslationsProvider>
 
           <main className="flex-grow" role="main">

@@ -6,14 +6,37 @@
   content: '';
   width: 24px;
   height: 24px;
+  padding: 5px;
   background-image: url('/image/chevron-right.svg');
+  transition: background-image 250ms linear;
+}
+.swiper_tablet_wrapper .swiper-button-prev:hover::after {
+  background-image: url('/image/chevron-right-hover.svg');
+}
+
+.swiper_tablet_wrapper .swiper-button-prev:focus::after {
+  background-image: url('/image/chevron-right-focus.svg');
 }
 
 .swiper_tablet_wrapper .swiper-button-next::after {
   content: '';
   width: 24px;
   height: 24px;
+  padding: 5px;
   background-image: url('/image/chevron-left.svg');
+  transition: background-image 250ms linear;
+}
+.swiper_tablet_wrapper .swiper-button-next:hover::after {
+  content: '';
+  width: 24px;
+  height: 24px;
+  background-image: url('/image/chevron-left-hover.svg');
+}
+.swiper_tablet_wrapper .swiper-button-next:focus::after {
+  content: '';
+  width: 24px;
+  height: 24px;
+  background-image: url('/image/chevron-left-focus.svg');
 }
 .swiper-button-prev,
 .swiper-button-next {

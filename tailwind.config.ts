@@ -55,6 +55,8 @@ const config: Config = {
       inputBorder: '#7f7f7f',
       activeBtn: '#D9D9D9',
       greyColor: '#f1f1f1',
+      orderHover: 'rgba(217, 217, 217, 0.2)',
+      continueHover: 'rgba(79, 79, 79, 0.44)',
     },
   },
   plugins: [require('@tailwindcss/forms'), require('@headlessui/tailwindcss')],
