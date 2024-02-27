@@ -11,7 +11,11 @@ type Props = {
 export const Label: FC<Props> = ({ labelText, children, className }) => {
   return (
     <label className={classnames('relative', className)}>
-      {labelText && <span className="text-gray-700">{labelText}</span>}
+      {labelText && (
+        <span className="mb-1 text-sm font-medium tracking-[.04em] text-blackColor md:text-base ">
+          {labelText}
+        </span>
+      )}
       {children}
     </label>
   );

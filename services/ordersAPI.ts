@@ -1,43 +1,40 @@
-import axios from 'axios';
-axios.defaults.baseURL = 'http://localhost:1337';
+import { baseInstance } from './utils';
 
-interface IOrderItem {
+export const ordersAPI = {
+  client: baseInstance(),
+
+  addUkraineOrder: async function (data: IOrderDto) {
+    return await this.client.post('/api/ukraine-orders', data);
+  },
+
+  addWorldOrder: async function (data: IOrderDto) {
+    return await this.client.post('/api/world-orders', data);
+  },
+};
+
+export type IOrderItem = {
   name: string;
   size: string;
-  price: string;
-}
-
-interface IWorldOrderDto {
-  data: {
-    name: string;
-    number: string;
-    email: string;
-    country: string;
-    city: string;
-    address: string;
-    index: number;
-    order_info: IOrderItem[];
-  };
-}
-
-interface IUkraineOrderDto {
-  data: {
-    name: string;
-    number: string;
-    email: string;
-    city: string;
-    delivery_method: string;
-    department_number: string;
-    order_info: IOrderItem[];
-  };
-}
-
-const addUkraineOrder = async (data: IUkraineOrderDto) => {
-  return await axios.post('/api/ukraine-orders', data);
+  price: number;
+  id: number;
+  preview: string;
+  category: string;
 };
 
-const addWorldOrder = async (data: IWorldOrderDto) => {
-  return await axios.post('/api/world-orders', data);
+export type IOrderDto = {
+  data: OrderProps;
 };
 
-export const ordersAPI = { addUkraineOrder, addWorldOrder };
+export type OrderProps = {
+  name: string;
+  number: string;
+  email: string;
+  city: string;
+  total_price: string;
+  order_info: IOrderItem[];
+  country?: string;
+  address?: string;
+  index?: number;
+  delivery_method?: string;
+  department_number?: string;
+};

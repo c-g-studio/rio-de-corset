@@ -1,17 +1,50 @@
 import * as zod from 'zod';
 
-export const schema = zod.object({
-  name: zod
+export const validationUkraineOrderSchema = zod.object({
+  name: zod.string().min(3, {
+    message: ' ',
+  }),
+  number: zod.string().min(9, {
+    message: ' ',
+  }),
+  email: zod.string().email({ message: ' ' }),
+  city: zod.string().min(3, {
+    message: ' ',
+  }),
+
+  delivery_method: zod.string().optional(),
+  department_number: zod
     .string()
-    .min(3, { message: 'Must be 3 or more characters long' })
-    .trim(),
-  email: zod.string().email({ message: 'Please enter a valid email address.' }),
-  details: zod
+    .min(1, {
+      message: ' ',
+    })
+    .optional(),
+});
+
+export const validationWorldOrderSchema = zod.object({
+  name: zod.string().min(3, {
+    message: ' ',
+  }),
+  number: zod.string().min(9, {
+    message: ' ',
+  }),
+  email: zod.string().email({ message: ' ' }),
+  city: zod.string().min(3, {
+    message: ' ',
+  }),
+  country: zod
     .string()
-    .min(10, { message: 'Must be 10 or more characters long' })
-    .max(500, { message: 'Must be 500 or less characters long' })
-    .trim(),
-  terms: zod
-    .boolean()
-    .refine(value => value, { message: 'This field is required.' }),
+    .min(3, {
+      message: ' ',
+    })
+    .optional(),
+  address: zod
+    .string()
+    .min(3, {
+      message: ' ',
+    })
+    .optional(),
+  index: zod.string().min(3, {
+    message: ' ',
+  }),
 });

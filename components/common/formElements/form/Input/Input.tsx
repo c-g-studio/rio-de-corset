@@ -22,7 +22,8 @@ export const Input = forwardRef(
         <input
           ref={ref}
           className={classnames(
-            'inputDefault',
+            ' border-inputBorder px-4 py-3 text-[12px] font-medium  placeholder:text-[12px] placeholder:text-placeholderColor hover:border-blackColor focus:border-blackColor focus:ring-transparent md:text-sm md:placeholder:text-sm',
+
             {
               inputError: error,
             },

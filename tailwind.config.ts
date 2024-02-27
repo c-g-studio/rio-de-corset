@@ -16,6 +16,9 @@ const config: Config = {
           lg: '4rem',
         },
       },
+      backgroundImage: {
+        checkedRadio: "url('/checkedRadio.png')",
+      },
     },
     keyframes: {
       rowAnim: {
@@ -49,6 +52,9 @@ const config: Config = {
       notValidBorder: '#D54747',
       notValidBgc: '#FFE8E8',
       silverColor: '#606060',
+      inputBorder: '#7f7f7f',
+      activeBtn: '#D9D9D9',
+      greyColor: '#f1f1f1',
       orderHover: 'rgba(217, 217, 217, 0.2)',
       continueHover: 'rgba(79, 79, 79, 0.44)',
     },
