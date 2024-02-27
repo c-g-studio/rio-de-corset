@@ -7,7 +7,11 @@ import { useTranslation } from 'react-i18next';
 
 interface Props {
   register: UseFormRegister<FieldValues>; // Замените тип any на тип, который соответствует UseFormRegister
-  errors: FieldErrors<{ email: string }>; // Замените тип any на тип, который соответствует FieldErrors
+  errors: FieldErrors<{
+    email: string;
+    city: string;
+    department_number: string;
+  }>; // Замените тип any на тип, который соответствует FieldErrors
 }
 export const DeliveryUkraineInputs: FC<Props> = ({ register, errors }) => {
   const { t } = useTranslation();
@@ -16,10 +20,12 @@ export const DeliveryUkraineInputs: FC<Props> = ({ register, errors }) => {
       <Label labelText={t('city')} className="mb-4 flex flex-col uppercase">
         <Input
           {...register('city')}
-          error={errors.email?.message}
+          error={errors.city?.message}
           placeholder={t('cityPlaceholder')}
+          className={`${errors.city ? 'border-notValidBorder bg-notValidBgc' : ''}`}
         />
       </Label>
+
       <Label
         labelText={t('deliveryMethod')}
         className="mb-4 flex flex-col uppercase"
@@ -32,11 +38,13 @@ export const DeliveryUkraineInputs: FC<Props> = ({ register, errors }) => {
           <option value={t('ukrPost')}>{t('ukrPost')}</option>
         </select>
       </Label>
+
       <Label labelText={t('postNumber')} className="flex flex-col uppercase">
         <Input
           {...register('department_number')}
-          error={errors.email?.message}
+          error={errors.department_number?.message}
           placeholder={t('postPlaceholder')}
+          className={`${errors.department_number ? 'border-notValidBorder bg-notValidBgc' : ''}`}
         />
       </Label>
     </>

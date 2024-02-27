@@ -1,37 +1,53 @@
 'use client';
 
-// import { zodResolver } from '@hookform/resolvers/zod';
-import { FC, useEffect, useState } from 'react';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { FC, useEffect, useState, useMemo } from 'react';
 
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-// import { schema } from '@/utils/validationSchema';
+import {
+  validationUkraineOrderSchema,
+  validationWorldOrderSchema,
+} from '@/utils/validationSchema';
+import { IOrderDto, ordersAPI, OrderProps } from '@/services/ordersAPI';
 import { Button } from '../button/Button';
 import { Input } from '../formElements/form/Input';
 import { Label } from '../formElements/form/Label';
 import { DeliveryUkraineInputs } from '@/components/pages/ordering/DeliveryUkraineInputs/DeliveryUkraineInputs';
 import { DeliveryWorldInputs } from '@/components/pages/ordering/DeliveryWorldInputs/DeliveryWorldInputs';
 
-type Inputs = Record<string, object>;
+import { FormProps, Inputs } from './Form.types';
 
-const onSubmit: SubmitHandler<Inputs> = data => console.info(data);
+const ukraineOrderType = {
+  uk: 'по Україні',
+  en: 'Delivery in Ukraine',
+};
 
-export const Form: FC = () => {
+const errorInputStyle = 'border-notValidBorder bg-notValidBgc';
+
+export const Form: FC<FormProps> = ({ totalPrice, products }) => {
+  const [orderType, setOrderType] = useState(ukraineOrderType.uk);
+  const isUkraineDelivery =
+    orderType === ukraineOrderType.uk || orderType === ukraineOrderType.en;
+
   const {
     watch,
     register,
     handleSubmit,
     getValues,
-
     formState: { errors },
   } = useForm<Inputs>({
     criteriaMode: 'all',
     mode: 'onChange',
-    // resolver: zodResolver(schema),
+    resolver: zodResolver(
+      isUkraineDelivery
+        ? validationUkraineOrderSchema
+        : validationWorldOrderSchema,
+    ),
   });
 
-  const [orderType, setOrderType] = useState('по Україні');
   const type = getValues('orderType');
+
   useEffect(() => {
     if (typeof type === 'string') {
       setOrderType(type);
@@ -39,6 +55,37 @@ export const Form: FC = () => {
   }, [type]);
 
   const { t } = useTranslation();
+
+  const onSubmit = async (data: Partial<OrderProps>): Promise<void> => {
+    try {
+      const newOrder = {
+        ...data,
+        total_price: totalPrice.toString(),
+        order_info: products,
+      } as OrderProps;
+
+      const request: IOrderDto = {
+        data: newOrder,
+      };
+
+      if (isUkraineDelivery) {
+        await ordersAPI.addUkraineOrder(request);
+        return;
+      }
+
+      await ordersAPI.addWorldOrder(request);
+    } catch (error: unknown) {
+      console.error(error);
+    }
+  };
+
+  const renderDeliveredInputs = useMemo(() => {
+    if (isUkraineDelivery) {
+      return <DeliveryUkraineInputs register={register} errors={errors} />;
+    }
+
+    return <DeliveryWorldInputs register={register} errors={errors} />;
+  }, [isUkraineDelivery, errors, register]);
 
   watch('orderType');
 
@@ -51,6 +98,7 @@ export const Form: FC = () => {
         <h3 className="mb-2 font-semibold uppercase tracking-[.04em] ">
           {t('country')}
         </h3>
+
         <Label
           labelText={t('inUkraine')}
           className="flex flex-row-reverse items-center justify-end gap-4 uppercase"
@@ -60,33 +108,41 @@ export const Form: FC = () => {
             type="radio"
             value={t('inUkraine')}
             defaultChecked
-            className="text-[14px] font-medium uppercase tracking-[.04em] "
+            className="border-2  border-blackColor bg-center text-[14px]  font-medium uppercase tracking-[.04em] transition-all ease-linear checked:border-2 checked:border-blackColor checked:bg-checkedRadio  checked:bg-[length:8px_8px] checked:text-transparent checked:ring-transparent hover:border-activeColor checked:hover:border-activeColor focus:bg-checkedRadio focus:bg-[length:8px_8px] focus:text-transparent focus:ring-transparent checked:focus:border-blackColor"
           />
         </Label>
+
         <Label
           labelText={t('worldwide')}
-          className="flex flex-row-reverse items-center justify-end gap-4 uppercase"
+          className="flex flex-row-reverse items-center justify-end gap-4 uppercase "
         >
           <input
             {...register('orderType')}
             type="radio"
             value={t('worldwide')}
-            className="text-[14px] font-medium uppercase tracking-[.04em] "
+            className="border-2  border-blackColor bg-center text-[14px]  font-medium uppercase tracking-[.04em] transition-all ease-linear checked:border-2 checked:border-blackColor checked:bg-checkedRadio  checked:bg-[length:8px_8px] checked:text-transparent checked:ring-transparent hover:border-activeColor checked:hover:border-activeColor focus:bg-checkedRadio focus:bg-[length:8px_8px] focus:text-transparent focus:ring-transparent checked:focus:border-blackColor"
           />
         </Label>
       </div>
+
       <div className="md:flex md:gap-4">
         <div className="mb-6 md:w-[50%]">
           <h3 className="mb-4 text-xl font-semibold uppercase tracking-[.04em] text-blackColor md:mb-6">
             {t('personalData')}
           </h3>
-          <Label labelText={t('name')} className="mb-4 flex flex-col uppercase">
+
+          <Label
+            labelText={t('name')}
+            className=" mb-4 flex flex-col uppercase"
+          >
             <Input
               {...register('name')}
-              error={errors.email?.message}
+              error={errors.name?.message}
               placeholder={t('namePlaceholder')}
+              className={`${errors.name ? errorInputStyle : ''}`}
             />
           </Label>
+
           <Label
             labelText={t('e-mail')}
             className="mb-4 flex flex-col uppercase"
@@ -94,28 +150,30 @@ export const Form: FC = () => {
             <Input
               {...register('email')}
               error={errors.email?.message}
-              placeholder={t('phonePlaceholder')}
+              placeholder={t('e-mailPlaceholder')}
+              className={`${errors.email ? errorInputStyle : ''}`}
             />
           </Label>
+
           <Label labelText={t('phone')} className="flex flex-col uppercase">
             <Input
               {...register('number')}
-              error={errors.email?.message}
-              placeholder={t('e-mailPlaceholder')}
+              error={errors.number?.message}
+              placeholder={t('phonePlaceholder')}
+              className={`${errors.number ? errorInputStyle : ''}`}
             />
           </Label>
         </div>
-        <div className="mb-4 md:w-[50%]">
+
+        <div className="mb-5 md:w-[50%]">
           <h3 className="mb-4 text-xl font-semibold uppercase tracking-[.04em] text-blackColor md:mb-6">
             {t('deliveryTitle')}
           </h3>
-          {orderType === 'по Україні' || orderType === 'Delivery in Ukraine' ? (
-            <DeliveryUkraineInputs register={register} errors={errors} />
-          ) : (
-            <DeliveryWorldInputs register={register} errors={errors} />
-          )}
+
+          {renderDeliveredInputs}
         </div>
       </div>
+
       <Button
         className=" w-full border-[1px] border-solid border-blackColor py-[14px] font-medium uppercase tracking-[.04em] transition-all ease-linear hover:bg-blackColor hover:text-whiteColor active:bg-activeBtn active:text-whiteColor"
         type="submit"

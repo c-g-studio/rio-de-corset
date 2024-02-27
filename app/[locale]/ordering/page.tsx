@@ -1,8 +1,8 @@
 import initTranslations from '@/app/i18n';
 import TranslationsProvider from '@/components/i18n/TranslationsProvider';
 import { NextPage } from 'next/types';
-import { Form } from '@/components/common/Form';
-import { Products } from '@/components/pages/ordering/Products/Products';
+
+import { Order } from '@/components/pages/ordering/Order/Order';
 // import { Input } from '@/components/common/formElements/form/Input';
 // import { Button } from '@/components/common/button/Button';
 // import { Label } from '@/components/common/formElements/form/Label';
@@ -29,10 +29,7 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
                 {t('title')}
               </h1>
             </div>
-            <div className="relative lg:flex lg:max-h-[600px] lg:justify-between lg:overflow-hidden">
-              <Form />
-              <Products locale={locale} />
-            </div>
+            <Order locale={locale} />
           </div>
         </div>
       </section>

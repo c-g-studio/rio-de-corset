@@ -40,7 +40,7 @@ export const ProductList: FC<ProductListProps> = ({
       <span className="flex items-center">
         {page < totalPage && (
           <button
-            className="text after:text-red-500 ml-auto mr-auto inline-flex flex-wrap text-center text-lg   after:inline-block after:h-[1px] after:w-full after:bg-blackColor after:content-['']"
+            className="text after:text-red-500 ml-auto mr-auto inline-flex flex-wrap text-center text-lg   after:inline-block after:h-[1px] after:w-full after:bg-blackColor after:content-[''] hover:text-activeColor hover:after:bg-activeColor focus:text-activeColor focus:outline-none focus:after:bg-activeColor"
             onClick={buttonClickHandler}
           >
             {t('learnMore')}

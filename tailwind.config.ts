@@ -16,6 +16,9 @@ const config: Config = {
           lg: '4rem',
         },
       },
+      backgroundImage: {
+        checkedRadio: "url('/checkedRadio.png')",
+      },
     },
     keyframes: {
       rowAnim: {
