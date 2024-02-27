@@ -10,6 +10,6 @@ export type ProductProps = {
 };
 
 export type FormProps = {
-  totalPrice: string;
+  totalPrice: number;
   products: ProductProps[];
 };
