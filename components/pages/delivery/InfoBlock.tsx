@@ -30,9 +30,9 @@ export const InfoBlock: FC = () => {
   }, [t]);
   return (
     <div className="mb-6 grow bg-activeColor p-4 md:p-6 lg:mb-0 lg:px-[52px] lg:py-[56px]">
-      <h2 className="mb-4 text-2xl/[1.67] font-light uppercase md:mb-8 md:text-[40px]/[1.5] lg:text-[60px]/[1]">
+      <h1 className="mb-4 text-2xl/[1.67] font-light uppercase md:mb-8 md:text-[40px]/[1.5] lg:text-[60px]/[1]">
         {viewString}
-      </h2>
+      </h1>
       <div className="md:flex md:gap-8">
         <div className="mb-4">
           <div className="mb-2">

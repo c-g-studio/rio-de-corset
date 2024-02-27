@@ -1,11 +1,12 @@
 'use client';
 import Link from 'next/link';
-import { FC } from 'react';
+import { Dispatch, FC, SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
 type OrderBlockProps = {
   price: number;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 };
-export const OrderBlock: FC<OrderBlockProps> = ({ price }) => {
+export const OrderBlock: FC<OrderBlockProps> = ({ price, setIsOpen }) => {
   const { t } = useTranslation();
   return (
     <div className="mt-auto flex flex-col bg-activeColor p-4 md:py-6 md:pl-9 md:pr-[26px]">
@@ -24,6 +25,7 @@ export const OrderBlock: FC<OrderBlockProps> = ({ price }) => {
       </Link>
       <Link
         href="/"
+        onClick={() => setIsOpen(false)}
         className="border border-blackColor py-[14px] text-center text-base font-medium uppercase tracking-[0.04em] transition hover:bg-continueHover focus:bg-continueHover active:bg-continueHover md:py-3 md:text-lg md:tracking-[0.08em]"
       >
         {t('continue')}
