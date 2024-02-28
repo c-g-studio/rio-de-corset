@@ -21,9 +21,10 @@ module.exports = createCoreController(
         delivery_method,
         department_number,
         order_info,
+        total_price,
       } = data.attributes;
 
-      const order = order_info
+      const orders = order_info
         .map(
           ({ name, size, price }) => `
             <p>Назва товару: ${name}</p>
@@ -47,7 +48,8 @@ module.exports = createCoreController(
                <p>Спосіб доставки: ${delivery_method}</p>
                <p>Номер відділення: ${department_number}</p>
                <h3>Замовленні   товари</h3>
-               ${order}
+               ${orders}
+               <h4>Загальна вартість замовлення: ${total_price}</h4>
                `,
       };
 

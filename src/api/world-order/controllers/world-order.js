@@ -11,8 +11,17 @@ module.exports = createCoreController("api::world-order.world-order", () => ({
   // some custom logic for POST request
   async create(ctx) {
     const { data } = await super.create(ctx);
-    const { name, number, email, country, city, address, index, order_info } =
-      data.attributes;
+    const {
+      name,
+      number,
+      email,
+      country,
+      city,
+      address,
+      index,
+      order_info,
+      total_price,
+    } = data.attributes;
 
     const order = order_info
       .map(
@@ -40,6 +49,7 @@ module.exports = createCoreController("api::world-order.world-order", () => ({
                <p>Індекс: ${index}</p>
                <h3>Замовленні товари</h3>
                ${order}
+                <h4>Загальна вартість замовлення: ${total_price}</h4>
                `,
     };
 
