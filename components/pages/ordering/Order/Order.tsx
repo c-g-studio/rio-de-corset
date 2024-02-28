@@ -34,7 +34,7 @@ const createProductArray =
 
 export const Order: FC<OrderProps> = ({ locale }) => {
   const [products, setProducts] = useState<ProductState[]>([]);
-  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalPrice, setTotalPrice] = useState('0');
 
   useEffect(() => {
     (async () => {
@@ -58,8 +58,8 @@ export const Order: FC<OrderProps> = ({ locale }) => {
       (accumulator, item) => (accumulator += item.price),
       0,
     );
-    setTotalPrice(total);
-  }, [products]);
+    setTotalPrice(`${total} ${locale === 'uk' ? ' ₴' : '$'}`);
+  }, [products, locale]);
 
   const deleteProduct = (category: string, id: number, index: number) => {
     shoppingCardService.deleteProducts(id, category);
@@ -76,7 +76,7 @@ export const Order: FC<OrderProps> = ({ locale }) => {
         products={products}
         deleteProduct={deleteProduct}
       />
-      <TotalPrice total={totalPrice} locale={locale} />
+      <TotalPrice total={totalPrice} />
     </div>
   );
 };
