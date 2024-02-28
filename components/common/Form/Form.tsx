@@ -26,7 +26,10 @@ const ukraineOrderType = {
 const errorInputStyle = 'border-notValidBorder bg-notValidBgc';
 
 export const Form: FC<FormProps> = ({ totalPrice, products }) => {
+  const { t } = useTranslation();
+  const people = [{ name: t('novaPost') }, { name: t('ukrPost') }];
   const [orderType, setOrderType] = useState(ukraineOrderType.uk);
+  const [selected, setSelected] = useState(people[0]);
   const isUkraineDelivery =
     orderType === ukraineOrderType.uk || orderType === ukraineOrderType.en;
 
@@ -54,14 +57,13 @@ export const Form: FC<FormProps> = ({ totalPrice, products }) => {
     }
   }, [type]);
 
-  const { t } = useTranslation();
-
   const onSubmit = async (data: Partial<OrderProps>): Promise<void> => {
     try {
       const newOrder = {
         ...data,
         total_price: totalPrice.toString(),
         order_info: products,
+        delivery_method: selected.name,
       } as OrderProps;
 
       const request: IOrderDto = {
@@ -81,11 +83,18 @@ export const Form: FC<FormProps> = ({ totalPrice, products }) => {
 
   const renderDeliveredInputs = useMemo(() => {
     if (isUkraineDelivery) {
-      return <DeliveryUkraineInputs register={register} errors={errors} />;
+      return (
+        <DeliveryUkraineInputs
+          register={register}
+          errors={errors}
+          selected={selected}
+          setSelected={setSelected}
+        />
+      );
     }
 
     return <DeliveryWorldInputs register={register} errors={errors} />;
-  }, [isUkraineDelivery, errors, register]);
+  }, [isUkraineDelivery, errors, register, selected]);
 
   watch('orderType');
 
@@ -165,7 +174,7 @@ export const Form: FC<FormProps> = ({ totalPrice, products }) => {
           </Label>
         </div>
 
-        <div className="mb-5 md:w-[50%]">
+        <div className="mb-4 md:w-[50%]">
           <h3 className="mb-4 text-xl font-semibold uppercase tracking-[.04em] text-blackColor md:mb-6">
             {t('deliveryTitle')}
           </h3>
