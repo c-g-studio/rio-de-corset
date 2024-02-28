@@ -949,6 +949,7 @@ export interface ApiUkraineOrderUkraineOrder extends Schema.CollectionType {
     singularName: 'ukraine-order';
     pluralName: 'ukraine-orders';
     displayName: '\u0417\u0430\u043C\u043E\u0432\u043B\u0435\u043D\u043D\u044F \u043F\u043E \u0423\u043A\u0440\u0430\u0457\u043D\u0456';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -961,6 +962,7 @@ export interface ApiUkraineOrderUkraineOrder extends Schema.CollectionType {
     delivery_method: Attribute.String & Attribute.Required;
     department_number: Attribute.String & Attribute.Required;
     order_info: Attribute.JSON & Attribute.Required;
+    total_price: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -996,9 +998,10 @@ export interface ApiWorldOrderWorldOrder extends Schema.CollectionType {
     email: Attribute.Email & Attribute.Required;
     country: Attribute.String & Attribute.Required;
     city: Attribute.String & Attribute.Required;
-    index: Attribute.Integer & Attribute.Required;
     order_info: Attribute.JSON & Attribute.Required;
     address: Attribute.String & Attribute.Required;
+    index: Attribute.String & Attribute.Required;
+    total_price: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

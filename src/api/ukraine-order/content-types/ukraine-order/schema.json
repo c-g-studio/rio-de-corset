@@ -4,7 +4,8 @@
   "info": {
     "singularName": "ukraine-order",
     "pluralName": "ukraine-orders",
-    "displayName": "Замовлення по Україні"
+    "displayName": "Замовлення по Україні",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -37,6 +38,10 @@
     },
     "order_info": {
       "type": "json",
+      "required": true
+    },
+    "total_price": {
+      "type": "string",
       "required": true
     }
   }
