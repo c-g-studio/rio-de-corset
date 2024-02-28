@@ -31,7 +31,7 @@ export const useProductList = ({
     setPage(previousState => previousState + 1);
   };
   const isDesktop = useMedia('(min-width: 1440px)', false);
-  const pageSize = isDesktop ? 2 : 1;
+  const pageSize = isDesktop ? 12 : 6;
 
   const fetchData = useCallback(
     async (callback: CallbackProps): Promise<void> => {

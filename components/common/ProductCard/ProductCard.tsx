@@ -41,7 +41,7 @@ export const ProductCard: FC<ProductCardProps> = ({
     >
       <Link
         href={`/${category}/${id}`}
-        className={`${s.shoppingCartHover} group block w-full bg-activeCardColor p-2 transition-colors duration-300 ease-in md:bg-whiteColor md:hover:bg-activeCardColor md:focus:bg-activeCardColor`}
+        className={`${s.shoppingCartHover} group block w-full bg-activeCardColor p-2 transition-colors duration-300 ease-in lg:bg-whiteColor lg:hover:bg-activeCardColor lg:focus:bg-activeCardColor`}
       >
         <div className="mb-4 flex h-[320px] items-center justify-center overflow-hidden bg-whiteColor md:h-[400px]">
           <Image
@@ -76,7 +76,7 @@ export const ProductCard: FC<ProductCardProps> = ({
           className={`${
             isAdded
               ? 'stroke-activeColor'
-              : 'stroke-blackColor hover:stroke-activeColor  md:stroke-whiteColor  md:group-hover:stroke-activeColor'
+              : 'stroke-blackColor hover:stroke-activeColor  md:group-hover:stroke-activeColor  lg:stroke-whiteColor'
           } h-7 w-7 fill-transparent transition-colors duration-300  ease-in   md:h-8 md:w-8  lg:h-10 lg:w-10`}
         >
           <use href="/image/icons.svg#icon-shopping-cart"></use>
