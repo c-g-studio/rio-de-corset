@@ -1,16 +1,12 @@
-/* .productCard:hover .icon {
+.shoppingCartHover:hover + .cartButton .icon,
+.shoppingCartHover:focus + .cartButton .icon {
   stroke: #000;
-} */
+}
+.shoppingCartHover:hover + .cartButton .iconActive,
+.shoppingCartHover:focus + .cartButton .iconActive {
+  stroke: #9eb315;
+}
 
 .cartButton:focus {
   outline: transparent;
 }
-
-/* .cartButton:hover .icon,
-.cartButton:focus .icon {
-  stroke: #9eb315;
-} */
-
-/* .shoppingCartHover:focus + .cartButton .icon {
-  stroke: #000;
-} */
