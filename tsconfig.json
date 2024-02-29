@@ -29,7 +29,8 @@
     ".next/types/**/*.ts",
     "components/i18n/LanguageChanger.tsx",
     "components/i18n/TranslationsProvider.tsx",
-    "components/i18n/TranslationsProvider.tsx"
+    "components/i18n/TranslationsProvider.tsx",
+    "app/i18n.js"
   ],
   "exclude": ["node_modules"]
 }

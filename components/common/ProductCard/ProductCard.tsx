@@ -1,4 +1,4 @@
-'use client';
+'use  client';
 import { ContextType, GlobalContext } from '@/app/[locale]/ContextWrapper';
 import { shoppingCardService } from '@/services/shoppingCardService';
 import { corsetAttributes } from '@/types/сorsetAttributes';

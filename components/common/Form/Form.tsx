@@ -174,7 +174,7 @@ export const Form: FC<FormProps> = ({ totalPrice, products }) => {
           </Label>
         </div>
 
-        <div className="mb-4 md:w-[50%]">
+        <div className=" md:w-[50%]">
           <h3 className="mb-4 text-xl font-semibold uppercase tracking-[.04em] text-blackColor md:mb-6">
             {t('deliveryTitle')}
           </h3>

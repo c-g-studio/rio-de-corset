@@ -2,7 +2,7 @@ import initTranslations from '@/app/i18n';
 import TranslationsProvider from '@/components/i18n/TranslationsProvider';
 import { NextPage } from 'next/types';
 
-const i18nNamespaces = ['shirts'];
+const i18nNamespaces = ['notFound'];
 
 interface NextPageProps {
   params: { locale: string; id: string };
@@ -16,8 +16,8 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale, id } }) => {
       locale={locale}
       resources={resources}
     >
-      <h1>{t('care')}</h1>
-      <p>This product ID - {id}</p>
+      <h1 className="mt-32 text-[200px]">{t('sorry')}</h1>
+      <p className="text-activeColor">This product ID - {id}</p>
     </TranslationsProvider>
   );
 };
