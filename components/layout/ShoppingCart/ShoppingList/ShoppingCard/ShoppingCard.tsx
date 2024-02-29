@@ -63,7 +63,10 @@ export const ShoppingCard: FC<ShoppingCardProps> = ({
             <li key={id} className="relative">
               <Link href={`/corsets/${id}`} className="flex gap-3 md:gap-4">
                 <Image
-                  src={'http://localhost:1337' + preview}
+                  src={
+                    `${process.env.NEXT_PUBLIC_API_URL}:${process.env.NEXT_PUBLIC_PORT}` +
+                    preview
+                  }
                   width={312}
                   height={320}
                   alt={`${name}`}
