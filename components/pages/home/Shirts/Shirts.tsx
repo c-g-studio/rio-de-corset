@@ -43,7 +43,7 @@ export const Shirts: FC<CorsetsProps> = ({ locale }) => {
 
   return (
     <section className="bg-whiteColor pb-[60px] pt-[30px] md:pb-[100px] md:pt-[50px] lg:pb-[140px] lg:pt-[70px]">
-      <div className="container px-6 md:px-10 lg:px-16">
+      <div className="container px-6 text-center md:px-10 lg:px-16">
         <h2
           ref={ref}
           className="mb-6 text-center text-[22px] font-medium uppercase tracking-[0.04em] text-blackColor md:mb-8 md:text-[28px] lg:mb-10 lg:text-[32px]"
@@ -53,7 +53,7 @@ export const Shirts: FC<CorsetsProps> = ({ locale }) => {
         <ShirtsList locale={locale} />
         <Link
           href="/shirts"
-          className="block text-center text-lg text-blackColor underline transition-colors hover:text-activeColor focus:text-activeColor active:text-selectBgc"
+          className="text after:text-red-500 ml-auto mr-auto inline-flex flex-wrap text-center text-lg transition after:inline-block after:h-[1px] after:w-full after:bg-blackColor after:content-[''] hover:text-activeColor hover:after:bg-activeColor focus:text-activeColor focus:outline-none focus:after:bg-activeColor"
         >
           дивитись більше
         </Link>

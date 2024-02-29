@@ -78,8 +78,8 @@ export const ProductCard: FC<ProductCardProps> = ({
         <svg
           className={`${
             isAdded
-              ? 'stroke-activeColor'
-              : 'stroke-blackColor hover:stroke-activeColor  md:group-hover:stroke-activeColor  lg:stroke-whiteColor'
+              ? `stroke-activeColor ${s.icon} ${s.iconActive}`
+              : `stroke-blackColor ${s.icon} hover:stroke-activeColor  md:group-hover:stroke-activeColor  lg:stroke-whiteColor`
           } h-7 w-7 fill-transparent transition-colors duration-300  ease-in   md:h-8 md:w-8  lg:h-10 lg:w-10`}
         >
           <use href="/image/icons.svg#icon-shopping-cart"></use>
