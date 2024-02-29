@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { CardSlider } from './CardSlider/CardSlider';
 import { InfoBlock } from './InfoBlock/InfoBlock';
 
-const { getCorsetById, getShirtById } = productsAPI;
+// const { getCorsetById, getShirtById } = productsAPI;
 type CardProps = {
   locale: string;
   category: string;
@@ -28,8 +28,8 @@ export const Card: FC<CardProps> = ({
     const request = async () => {
       const { data: data } =
         requestType === 'shirts'
-          ? await getShirtById(Number(slug), locale)
-          : await getCorsetById(Number(slug), locale);
+          ? await productsAPI.getShirtById(Number(slug), locale)
+          : await productsAPI.getCorsetById(Number(slug), locale);
       setProductData(data);
     };
     request();

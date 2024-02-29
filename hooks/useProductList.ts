@@ -1,8 +1,6 @@
 import { useEffect, useState, useCallback } from 'react';
 import { useMedia } from 'react-use';
-import { AxiosResponse } from 'axios';
-
-import { productsAPI } from '@/services/productsAPI';
+import { ProductsAPIProps, productsAPI } from '@/services/productsAPI';
 
 import { CorsetsDtoProps } from '@/types/corsetsDto';
 
@@ -11,11 +9,11 @@ type useProductListProps = {
   requestType: 'shirts' | 'corsets';
 };
 
-type CallbackProps = (
-  locale: string,
-  pageSize: number,
-  page: number,
-) => Promise<AxiosResponse>;
+// type CallbackProps = (
+//   locale: string,
+//   pageSize: number,
+//   page: number,
+// ) => Promise<AxiosResponse>;
 
 export const useProductList = ({
   locale,
@@ -34,11 +32,14 @@ export const useProductList = ({
   const pageSize = isDesktop ? 12 : 6;
 
   const fetchData = useCallback(
-    async (callback: CallbackProps): Promise<void> => {
+    async (callback: ProductsAPIProps): Promise<void> => {
       setIsLoading(true);
 
       try {
-        const { data: responseData } = await callback(locale, pageSize, page);
+        const { data: responseData } =
+          requestType === 'shirts'
+            ? await callback.getShirts(locale, pageSize, page)
+            : await callback.getCorsets(locale, pageSize, page);
 
         if (page === 1) {
           setTotalPage(
@@ -55,19 +56,12 @@ export const useProductList = ({
         setIsLoading(false);
       }
     },
-    [locale, page, pageSize],
+    [locale, page, pageSize, requestType],
   );
 
   useEffect(() => {
     (async () => {
-      if (requestType === 'shirts') {
-        await fetchData(productsAPI.getShirts);
-        return;
-      }
-
-      if (requestType === 'corsets') {
-        await fetchData(productsAPI.getCorsets);
-      }
+      await fetchData(productsAPI);
     })();
   }, [fetchData, requestType]);
 

@@ -3,7 +3,6 @@ import { productsAPI } from '@/services/productsAPI';
 import { shoppingCardService } from '@/services/shoppingCardService';
 import { FC, useContext, useEffect, useState } from 'react';
 import { ShoppingCard } from './ShoppingCard/ShoppingCard';
-const { getCorsetById, getShirtById } = productsAPI;
 const { getProducts, deleteProducts } = shoppingCardService;
 
 interface Product {
@@ -48,10 +47,10 @@ export const ShoppingList: FC<Props> = ({ locale, totalPrice }) => {
     const fetchProducts = async () => {
       const { corsets, shirts } = getProducts();
       const corsetsPromises = corsets.map((id: number) =>
-        getCorsetById(id, locale),
+        productsAPI.getCorsetById(id, locale),
       );
       const shirtsPromises = shirts.map((id: number) =>
-        getShirtById(id, locale),
+        productsAPI.getShirtById(id, locale),
       );
 
       try {

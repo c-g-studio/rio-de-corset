@@ -21,7 +21,7 @@ import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import { Swiper as SwiperType } from 'swiper/types';
 
 const IS_DESCTOP = '(min-width: 1440px)';
-const BASE_URL = 'http://localhost:1337';
+const BASE_URL = `${process.env.NEXT_PUBLIC_API_URL}:${process.env.NEXT_PUBLIC_PORT}`;
 
 type CardProps = {
   data: AxiosResponse<{
