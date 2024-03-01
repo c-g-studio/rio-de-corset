@@ -29,6 +29,8 @@ export const ProductCard: FC<ProductCardProps> = ({
   const { setIndicatorLS } = useContext<ContextType>(GlobalContext);
 
   const preview = attributes.preview.data.attributes.url;
+  // const preview = attributes.preview.data.attributes.formats.small.url;
+
   const name = locale === 'uk' ? attributes.name_uk : attributes.name_en;
   const price = locale === 'uk' ? attributes.price_uk : attributes.price_en;
   const size_abbr = attributes.size.data.attributes.size_abbr;
@@ -74,6 +76,7 @@ export const ProductCard: FC<ProductCardProps> = ({
           setIndicatorLS((previousState: boolean): boolean => !previousState);
           isAddedToggle();
         }}
+        aria-label="add product to shopping card"
       >
         <svg
           className={`${

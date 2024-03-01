@@ -7,6 +7,7 @@ import { FC, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { CardSlider } from './CardSlider/CardSlider';
 import { InfoBlock } from './InfoBlock/InfoBlock';
+import { useRouter } from 'next/navigation';
 
 // const { getCorsetById, getShirtById } = productsAPI;
 type CardProps = {
@@ -23,17 +24,22 @@ export const Card: FC<CardProps> = ({
 }) => {
   const [productData, setProductData] = useState<AxiosResponse | null>(null);
   const { t } = useTranslation();
+  const router = useRouter();
 
   useEffect(() => {
     const request = async () => {
-      const { data: data } =
-        requestType === 'shirts'
-          ? await productsAPI.getShirtById(Number(slug), locale)
-          : await productsAPI.getCorsetById(Number(slug), locale);
-      setProductData(data);
+      try {
+        const { data: data } =
+          requestType === 'shirts'
+            ? await productsAPI.getShirtById(Number(slug), locale)
+            : await productsAPI.getCorsetById(Number(slug), locale);
+        setProductData(data);
+      } catch {
+        router.push('/404');
+      }
     };
     request();
-  }, [slug, locale, requestType, category]);
+  }, [slug, locale, requestType, category, router]);
   return (
     <section className="pb-[60px] pt-[84px] md:pb-[100px] md:pt-[126px] lg:pb-[140px]">
       <div className="container ">

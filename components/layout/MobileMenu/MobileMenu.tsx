@@ -27,6 +27,7 @@ export const MobileMenu: FC = () => {
           className="text-gray-700 hover:bg-gray-100 order-1  text-sm md:order-3	md:mr-0"
           type="button"
           onClick={toggleMenu}
+          aria-label="open mobile menu"
         >
           {isMenuOpen ? (
             <svg className="linear h-8 w-8 stroke-blackColor transition-colors duration-300 group-hover:stroke-activeColor md:h-[24px] md:w-[24px]	">
@@ -54,6 +55,7 @@ export const MobileMenu: FC = () => {
             className="text-gray-700 hover:bg-gray-100 absolute right-4 top-[18px] bg-whiteColor px-4 py-2 text-sm md:left-6 md:right-auto md:top-8"
             type="button"
             onClick={toggleMenu}
+            aria-label="close mobile menu"
           >
             <svg className="linear h-[24px] w-[24px] stroke-blackColor transition-colors duration-300 group-hover:stroke-activeColor	">
               <use href="/image/icons.svg#icon-x"></use>

@@ -1,11 +1,7 @@
 import initTranslations from '@/app/i18n';
 import TranslationsProvider from '@/components/i18n/TranslationsProvider';
 import { NextPage } from 'next/types';
-
 import { Order } from '@/components/pages/ordering/Order/Order';
-// import { Input } from '@/components/common/formElements/form/Input';
-// import { Button } from '@/components/common/button/Button';
-// import { Label } from '@/components/common/formElements/form/Label';
 
 const i18nNamespaces = ['ordering'];
 

@@ -89,6 +89,7 @@ export const ShoppingCard: FC<ShoppingCardProps> = ({
                 className="absolute right-0 top-0 p-2"
                 type="button"
                 onClick={() => removeElement(id)}
+                aria-label="open shopping card"
               >
                 <svg className="linear h-[24px] w-[24px] stroke-blackColor transition-colors duration-300 group-hover:stroke-activeColor">
                   <use href="/image/icons.svg#icon-x"></use>

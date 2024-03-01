@@ -71,12 +71,16 @@ export const Order: FC<OrderProps> = ({ locale }) => {
   return (
     <div className="relative lg:flex lg:max-h-[600px] lg:justify-between lg:overflow-hidden ">
       <Form totalPrice={totalPrice} products={products} />
-      <Products
-        locale={locale}
-        products={products}
-        deleteProduct={deleteProduct}
-      />
-      <TotalPrice total={totalPrice} />
+      {products.length > 0 && (
+        <>
+          <Products
+            locale={locale}
+            products={products}
+            deleteProduct={deleteProduct}
+          />
+          <TotalPrice total={totalPrice} />
+        </>
+      )}
     </div>
   );
 };

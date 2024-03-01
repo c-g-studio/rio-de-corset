@@ -25,5 +25,7 @@
   "index": "Postcode",
   "indexPlaceHolder": "Enter the postcode",
   "address": "address",
-  "addressPlaceholder": "Enter your address"
+  "addressPlaceholder": "Enter your address",
+  "successOrder": "Your order has been successfully sent",
+  "errorOrder": "Something went wrong, try again, please 🙄"
 }

@@ -17,6 +17,8 @@ import { DeliveryUkraineInputs } from '@/components/pages/ordering/DeliveryUkrai
 import { DeliveryWorldInputs } from '@/components/pages/ordering/DeliveryWorldInputs/DeliveryWorldInputs';
 
 import { FormProps, Inputs } from './Form.types';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ukraineOrderType = {
   uk: 'по Україні',
@@ -72,12 +74,14 @@ export const Form: FC<FormProps> = ({ totalPrice, products }) => {
 
       if (isUkraineDelivery) {
         await ordersAPI.addUkraineOrder(request);
+        toast.success(t('successOrder'));
         return;
       }
 
       await ordersAPI.addWorldOrder(request);
-    } catch (error: unknown) {
-      console.error(error);
+      toast.success(t('successOrder'));
+    } catch {
+      toast.error(t('errorOrder'));
     }
   };
 
@@ -99,96 +103,100 @@ export const Form: FC<FormProps> = ({ totalPrice, products }) => {
   watch('orderType');
 
   return (
-    <form
-      className=" mb-[22px] w-full max-w-md md:max-w-full lg:m-0 lg:w-[700px]"
-      onSubmit={handleSubmit(onSubmit)}
-    >
-      <div className="mb-8 lg:pl-1">
-        <h3 className="mb-2 font-semibold uppercase tracking-[.04em] ">
-          {t('country')}
-        </h3>
-
-        <Label
-          labelText={t('inUkraine')}
-          className="flex flex-row-reverse items-center justify-end gap-4 uppercase"
-        >
-          <input
-            {...register('orderType')}
-            type="radio"
-            value={t('inUkraine')}
-            defaultChecked
-            className="border-2  border-blackColor bg-center text-[14px]  font-medium uppercase tracking-[.04em] transition-all ease-linear checked:border-2 checked:border-blackColor checked:bg-checkedRadio  checked:bg-[length:8px_8px] checked:text-transparent checked:ring-transparent hover:border-activeColor checked:hover:border-activeColor focus:bg-checkedRadio focus:bg-[length:8px_8px] focus:text-transparent focus:ring-transparent checked:focus:border-blackColor"
-          />
-        </Label>
-
-        <Label
-          labelText={t('worldwide')}
-          className="flex flex-row-reverse items-center justify-end gap-4 uppercase "
-        >
-          <input
-            {...register('orderType')}
-            type="radio"
-            value={t('worldwide')}
-            className="border-2  border-blackColor bg-center text-[14px]  font-medium uppercase tracking-[.04em] transition-all ease-linear checked:border-2 checked:border-blackColor checked:bg-checkedRadio  checked:bg-[length:8px_8px] checked:text-transparent checked:ring-transparent hover:border-activeColor checked:hover:border-activeColor focus:bg-checkedRadio focus:bg-[length:8px_8px] focus:text-transparent focus:ring-transparent checked:focus:border-blackColor"
-          />
-        </Label>
-      </div>
-
-      <div className="md:flex md:gap-4">
-        <div className="mb-6 md:w-[50%]">
-          <h3 className="mb-4 text-xl font-semibold uppercase tracking-[.04em] text-blackColor md:mb-6">
-            {t('personalData')}
-          </h3>
-
-          <Label
-            labelText={t('name')}
-            className=" mb-4 flex flex-col uppercase"
-          >
-            <Input
-              {...register('name')}
-              error={errors.name?.message}
-              placeholder={t('namePlaceholder')}
-              className={`${errors.name ? errorInputStyle : ''}`}
-            />
-          </Label>
-
-          <Label
-            labelText={t('e-mail')}
-            className="mb-4 flex flex-col uppercase"
-          >
-            <Input
-              {...register('email')}
-              error={errors.email?.message}
-              placeholder={t('e-mailPlaceholder')}
-              className={`${errors.email ? errorInputStyle : ''}`}
-            />
-          </Label>
-
-          <Label labelText={t('phone')} className="flex flex-col uppercase">
-            <Input
-              {...register('number')}
-              error={errors.number?.message}
-              placeholder={t('phonePlaceholder')}
-              className={`${errors.number ? errorInputStyle : ''}`}
-            />
-          </Label>
-        </div>
-
-        <div className=" md:w-[50%]">
-          <h3 className="mb-4 text-xl font-semibold uppercase tracking-[.04em] text-blackColor md:mb-6">
-            {t('deliveryTitle')}
-          </h3>
-
-          {renderDeliveredInputs}
-        </div>
-      </div>
-
-      <Button
-        className=" w-full border-[1px] border-solid border-blackColor py-[14px] font-medium uppercase tracking-[.04em] transition-all ease-linear hover:bg-blackColor hover:text-whiteColor active:bg-activeBtn active:text-whiteColor"
-        type="submit"
+    <>
+      {' '}
+      <form
+        className=" mb-[22px] w-full max-w-md md:max-w-full lg:m-0 lg:w-[700px]"
+        onSubmit={handleSubmit(onSubmit)}
       >
-        {t('order')}
-      </Button>
-    </form>
+        <div className="mb-8 lg:pl-1">
+          <h2 className="mb-2 font-semibold uppercase tracking-[.04em] ">
+            {t('country')}
+          </h2>
+
+          <Label
+            labelText={t('inUkraine')}
+            className="flex flex-row-reverse items-center justify-end gap-4 uppercase"
+          >
+            <input
+              {...register('orderType')}
+              type="radio"
+              value={t('inUkraine')}
+              defaultChecked
+              className="border-2  border-blackColor bg-center text-[14px]  font-medium uppercase tracking-[.04em] transition-all ease-linear checked:border-2 checked:border-blackColor checked:bg-checkedRadio  checked:bg-[length:8px_8px] checked:text-transparent checked:ring-transparent hover:border-activeColor checked:hover:border-activeColor focus:bg-checkedRadio focus:bg-[length:8px_8px] focus:text-transparent focus:ring-transparent checked:focus:border-blackColor"
+            />
+          </Label>
+
+          <Label
+            labelText={t('worldwide')}
+            className="flex flex-row-reverse items-center justify-end gap-4 uppercase "
+          >
+            <input
+              {...register('orderType')}
+              type="radio"
+              value={t('worldwide')}
+              className="border-2  border-blackColor bg-center text-[14px]  font-medium uppercase tracking-[.04em] transition-all ease-linear checked:border-2 checked:border-blackColor checked:bg-checkedRadio  checked:bg-[length:8px_8px] checked:text-transparent checked:ring-transparent hover:border-activeColor checked:hover:border-activeColor focus:bg-checkedRadio focus:bg-[length:8px_8px] focus:text-transparent focus:ring-transparent checked:focus:border-blackColor"
+            />
+          </Label>
+        </div>
+
+        <div className="md:flex md:gap-4">
+          <div className="mb-6 md:w-[50%]">
+            <h2 className="mb-4 text-xl font-semibold uppercase tracking-[.04em] text-blackColor md:mb-6">
+              {t('personalData')}
+            </h2>
+
+            <Label
+              labelText={t('name')}
+              className=" mb-4 flex flex-col uppercase"
+            >
+              <Input
+                {...register('name')}
+                error={errors.name?.message}
+                placeholder={t('namePlaceholder')}
+                className={`${errors.name ? errorInputStyle : ''}`}
+              />
+            </Label>
+
+            <Label
+              labelText={t('e-mail')}
+              className="mb-4 flex flex-col uppercase"
+            >
+              <Input
+                {...register('email')}
+                error={errors.email?.message}
+                placeholder={t('e-mailPlaceholder')}
+                className={`${errors.email ? errorInputStyle : ''}`}
+              />
+            </Label>
+
+            <Label labelText={t('phone')} className="flex flex-col uppercase">
+              <Input
+                {...register('number')}
+                error={errors.number?.message}
+                placeholder={t('phonePlaceholder')}
+                className={`${errors.number ? errorInputStyle : ''}`}
+              />
+            </Label>
+          </div>
+
+          <div className=" md:w-[50%]">
+            <h2 className="mb-4 text-xl font-semibold uppercase tracking-[.04em] text-blackColor md:mb-6">
+              {t('deliveryTitle')}
+            </h2>
+
+            {renderDeliveredInputs}
+          </div>
+        </div>
+
+        <Button
+          className=" w-full border-[1px] border-solid border-blackColor py-[14px] font-medium uppercase tracking-[.04em] transition-all ease-linear hover:bg-blackColor hover:text-whiteColor active:bg-activeBtn active:text-whiteColor"
+          type="submit"
+        >
+          {t('order')}
+        </Button>
+      </form>
+      <ToastContainer />
+    </>
   );
 };

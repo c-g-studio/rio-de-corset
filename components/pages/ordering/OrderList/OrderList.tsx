@@ -59,6 +59,7 @@ export const Products: FC<ProductsProps> = ({
                 <IconButton
                   className=""
                   type="button"
+                  aria-label="delete product from shopping card"
                   onClick={() => deleteProduct(category, id, index)}
                 >
                   <svg className="linear h-[24px] w-[24px] stroke-blackColor transition-colors duration-300 group-hover:stroke-activeColor	">

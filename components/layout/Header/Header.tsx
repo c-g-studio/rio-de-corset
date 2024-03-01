@@ -25,7 +25,7 @@ export const Header: FC<HeaderProps> = ({ locale }) => {
       role="banner"
     >
       <div className="container flex items-center justify-between">
-        <Link href="/" className="hidden  md:block">
+        <Link href="/" className="hidden  md:block" title="link to main page">
           <Logo className="w-[78px]" />
         </Link>
 

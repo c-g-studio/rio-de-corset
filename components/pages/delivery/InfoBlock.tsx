@@ -36,9 +36,9 @@ export const InfoBlock: FC = () => {
       <div className="md:flex md:gap-8">
         <div className="mb-4">
           <div className="mb-2">
-            <h3 className="mb-1 text-base/[1.25] md:mb-4 md:text-xl/[1.6] lg:text-2xl/[1.33]	">
+            <h2 className="mb-1 text-base/[1.25] md:mb-4 md:text-xl/[1.6] lg:text-2xl/[1.33]	">
               {t('europe')}
-            </h3>
+            </h2>
             <p className="flex gap-2 text-sm/[1.29] font-light	 md:text-base/[2] lg:text-lg/[1.78]">
               <svg width={24} height={24} className="stroke-blackColor">
                 <use href="/image/icons.svg#icon-clock"></use>
@@ -47,9 +47,9 @@ export const InfoBlock: FC = () => {
             </p>
           </div>
           <div>
-            <h3 className="mb-1 text-base/[1.25] md:mb-4 md:text-xl/[1.6] lg:text-2xl/[1.33]">
+            <h2 className="mb-1 text-base/[1.25] md:mb-4 md:text-xl/[1.6] lg:text-2xl/[1.33]">
               {t('america')}
-            </h3>
+            </h2>
             <p className="mb-2 flex gap-2 text-sm/[1.29] font-light	 md:text-base/[2] lg:text-lg/[1.78]">
               <svg width={24} height={24} className="stroke-blackColor">
                 <use href="/image/icons.svg#icon-clock"></use>
@@ -69,9 +69,9 @@ export const InfoBlock: FC = () => {
           </div>
         </div>
         <div>
-          <h3 className="mb-1 text-base/[1.25] md:mb-4 md:text-xl/[1.6] lg:text-2xl/[1.33]">
+          <h2 className="mb-1 text-base/[1.25] md:mb-4 md:text-xl/[1.6] lg:text-2xl/[1.33]">
             {t('ukraine')}
-          </h3>
+          </h2>
           <p className="mb-[2px] flex gap-2 text-sm/[1.29] font-light md:mb-2 md:text-base/[2] lg:text-lg/[1.78]">
             <svg width={24} height={24} className="stroke-blackColor">
               <use href="/image/icons.svg#icon-clock"></use>
