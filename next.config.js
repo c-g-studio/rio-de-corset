@@ -3,8 +3,6 @@ const nextConfig = {
   reactStrictMode: true,
 
   images: {
-    // loader: 'custom',
-    // loaderFile: './ImageLoader.js',
     domains: ['localhost', 'rio-de-corset-production.up.railway.app'],
     remotePatterns: [
       {
