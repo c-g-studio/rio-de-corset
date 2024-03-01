@@ -13,6 +13,7 @@ export const Footer: FC = ({ ...props }) => {
           <li>
             <Link
               href="/"
+              title="link to instagram"
               className="stroke-whiteColor transition-colors hover:stroke-activeColor focus:stroke-activeColor active:stroke-activeColor"
             >
               <svg width={24} height={24} className="stroke-current">
@@ -23,6 +24,7 @@ export const Footer: FC = ({ ...props }) => {
           <li>
             <Link
               href="/"
+              title="link to linkedin"
               className="fill-whiteColor stroke-whiteColor transition-colors hover:fill-activeColor hover:stroke-activeColor focus:fill-activeColor focus:stroke-activeColor active:fill-activeColor active:stroke-activeColor"
             >
               <svg width={24} height={24} className="stroke-current">

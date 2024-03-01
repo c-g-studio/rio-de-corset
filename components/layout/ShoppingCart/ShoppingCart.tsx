@@ -66,6 +66,7 @@ export const ShoppingCart: FC<ShoppingCartProps> = ({ locale }) => {
       <button
         className="group order-3 ml-4 flex items-center md:ml-0"
         onClick={() => setIsOpen(true)}
+        aria-label="open shopping card"
       >
         <span className="linear mr-[-2px] flex h-[14px] w-[14px] items-center justify-center rounded-full bg-blackColor text-[11px] font-extrabold uppercase text-whiteColor transition-colors duration-300 group-hover:bg-activeColor">
           {allProduct}
@@ -82,6 +83,7 @@ export const ShoppingCart: FC<ShoppingCartProps> = ({ locale }) => {
             className=""
             type="button"
             onClick={() => setIsOpen(false)}
+            aria-label="open shopping card"
           >
             <svg className="linear h-[24px] w-[24px] stroke-blackColor transition-colors duration-300 group-hover:stroke-activeColor	">
               <use href="/image/icons.svg#icon-x"></use>
