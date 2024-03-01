@@ -47,10 +47,7 @@ export const ProductCard: FC<ProductCardProps> = ({
       >
         <div className="mb-4 flex h-[320px] items-center justify-center overflow-hidden bg-whiteColor md:h-[400px]">
           <Image
-            src={
-              `${process.env.NEXT_PUBLIC_API_URL}:${process.env.NEXT_PUBLIC_PORT}` +
-              preview
-            }
+            src={process.env.NEXT_PUBLIC_API_URL + preview}
             width={312}
             height={320}
             alt={name}
