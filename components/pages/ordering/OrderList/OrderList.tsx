@@ -39,7 +39,7 @@ export const Products: FC<ProductsProps> = ({
             >
               {/* <div className="flex h-[100px]  w-[103px] items-center justify-center overflow-hidden"> */}
               <Image
-                src={`${process.env.NEXT_PUBLIC_API_URL}:${process.env.NEXT_PUBLIC_PORT}${preview}`}
+                src={`${process.env.NEXT_PUBLIC_API_URL}` + preview}
                 width={136}
                 height={132}
                 alt={name}

@@ -5,11 +5,11 @@ const nextConfig = {
   images: {
     // loader: 'custom',
     // loaderFile: './ImageLoader.js',
-    domains: ['localhost'],
+    domains: ['localhost', 'rio-de-corset-production.up.railway.app'],
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: 'localhost',
+        protocol: 'https',
+        hostname: 'rio-de-corset-production.up.railway.app',
         port: '1337',
       },
     ],
