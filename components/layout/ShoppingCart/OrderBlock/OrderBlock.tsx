@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { Dispatch, FC, SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
+import s from './style.module.css';
 type OrderBlockProps = {
   price: number;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
@@ -9,8 +10,12 @@ type OrderBlockProps = {
 export const OrderBlock: FC<OrderBlockProps> = ({ price, setIsOpen }) => {
   const { t } = useTranslation();
   return (
-    <div className="mt-auto flex flex-col bg-activeColor p-4 md:py-6 md:pl-9 md:pr-[26px]">
-      <p className="mb-4 text-[17px] font-medium tracking-[0.04em] md:mb-6">
+    <div
+      className={`${s.block_horizont} mt-auto flex flex-col bg-activeColor p-4 md:py-6 md:pl-9 md:pr-[26px]`}
+    >
+      <p
+        className={`${s.price_element} mb-4 text-[17px] font-medium tracking-[0.04em] md:mb-6`}
+      >
         <span className="mr-3 uppercase">{t('total')}</span>
         <span>
           {price}

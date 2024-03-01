@@ -3,6 +3,7 @@ import { productsAPI } from '@/services/productsAPI';
 import { shoppingCardService } from '@/services/shoppingCardService';
 import { FC, useContext, useEffect, useState } from 'react';
 import { ShoppingCard } from './ShoppingCard/ShoppingCard';
+import s from './style.module.css';
 const { getProducts, deleteProducts } = shoppingCardService;
 
 interface Product {
@@ -86,7 +87,9 @@ export const ShoppingList: FC<Props> = ({ locale, totalPrice }) => {
   };
 
   return (
-    <div className="mb-[118px] overflow-y-auto pl-4 md:mb-[108px] lg:mb-[70px]">
+    <div
+      className={`${s.block_horizont} mb-[118px] overflow-y-auto pl-4 md:mb-[108px] lg:mb-[70px]`}
+    >
       <ul className="flex flex-col gap-2 ">
         <ShoppingCard
           dataArr={corsetsCardData}
