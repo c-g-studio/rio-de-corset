@@ -38,7 +38,7 @@ export const InfoBlock: FC<CardProps> = ({ data, category, locale }) => {
         <h2 className="mb-4 text-lg font-medium uppercase tracking-[0.04em] md:text-[32px] lg:mb-8">
           {name}
         </h2>
-        <p className="mb-2 text-sm font-semibold md:text-xl lg:mb-6">
+        <p className="mb-2 text-sm font-semibold uppercase md:text-xl lg:mb-6">
           ({size_abbr}) {sizeText}
         </p>
         <p className="mb-2 text-sm font-medium tracking-[0.04em] md:mb-4 md:text-xl lg:mb-8">
