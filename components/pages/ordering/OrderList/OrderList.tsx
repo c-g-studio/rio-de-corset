@@ -30,7 +30,7 @@ export const Products: FC<ProductsProps> = ({
 }) => {
   return (
     <div className="bg-greyColor lg:w-[508px] lg:overflow-y-scroll">
-      <ul className="flex flex-col px-3 pt-4 md:gap-4 md:px-10 md:pt-6 lg:mb-24">
+      <ul className="flex flex-col gap-4 px-3 pb-10 pt-4 md:gap-4 md:px-10 md:pt-6 lg:mb-10">
         {products.map(({ id, category, name, size, price, preview }, index) => {
           return (
             <li
