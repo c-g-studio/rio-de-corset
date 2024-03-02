@@ -17,15 +17,13 @@ export const NotFoundComponent: FC<NotFoundProps> = ({
   return (
     <section className="overflow-hidden">
       <div className="container relative pb-[60px] pt-[251px] text-center md:pb-[200px] lg:pb-[140px]">
-        <div
-          className={`absolute top-[60px] flex w-full justify-center md:top-[106px] md:w-auto md:justify-start`}
-        >
+        <div className="absolute top-[60px] flex w-full justify-center md:top-[106px] md:w-auto md:justify-start">
           <Image
             src="/image/404/adidas.png"
             width={180}
             height={241}
             alt="corset"
-            className={`w-[241px] animate-[rotateAnim_3s_linear_infinite]`}
+            className="w-[241px] animate-[rotateAnim_3s_linear_infinite]"
           />
         </div>
         <div className="md:mx-auto md:max-w-[487px]">

@@ -43,7 +43,7 @@ export const MobileMenu: FC = () => {
       )}
       {isBrowser && !isDesctop && (
         <div
-          className={`${classes} ${s.mob_menu} fixed left-[-100%] top-0 z-[100] h-[100%] w-[100%] bg-whiteColor pt-[140px] transition md:left-auto md:right-[-480px] md:w-[480px]`}
+          className={`${classes} ${s.mob_menu} fixed left-[-100%] top-0 z-[999] h-[100%] w-[100%] bg-whiteColor pt-[140px] transition md:left-auto md:right-[-480px] md:w-[480px]`}
         >
           <Link
             href="/"
