@@ -75,6 +75,13 @@ export const ShoppingCart: FC<ShoppingCartProps> = ({ locale }) => {
           <use href="/image/icons.svg#icon-shopping-cart"></use>
         </svg>
       </button>
+      {isOpen && (
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+        <div
+          className={`bg-backdropColor fixed left-0 top-0 block h-[100%] w-[100%]`}
+          onClick={() => setIsOpen(false)}
+        ></div>
+      )}
       <div
         className={`${classes} fixed left-[-100%] top-0 z-[100] flex h-[100%] w-[100%] flex-col bg-whiteColor pt-8 transition md:left-auto md:right-[-480px] md:w-[480px]`}
       >
