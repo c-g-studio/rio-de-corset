@@ -26,6 +26,8 @@
   "indexPlaceHolder": "Enter the postcode",
   "address": "address",
   "addressPlaceholder": "Enter your address",
-  "successOrder": "Your order has been successfully sent",
-  "errorOrder": "Something went wrong, try again, please 🙄"
+  "successOrderTitle": "Thank you for your order.",
+  "successOrderText": "Just a few more steps and your unique upsycle will be delivered to you. Expect an email from Rio",
+  "errorOrderTitle": "SOMETHING WAS WRONG...",
+  "errorOrderText": "PLEASE TRY AGAIN"
 }

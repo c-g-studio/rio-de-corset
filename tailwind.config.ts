@@ -80,6 +80,8 @@ const config: Config = {
       greyColor: '#f1f1f1',
       orderHoverLink: '#36373A',
       continueHover: 'rgba(79, 79, 79, 0.44)',
+      fuckingModalBackdrop: 'rgba(0, 0, 0, 0.2)',
+      modalTextBg: '#FFE2E2',
       backdropColor: 'rgba(0, 0, 0, 0.2);',
     },
   },
