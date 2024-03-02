@@ -1,0 +1,9 @@
+/* translate-x-[-50%]
+  animate-[rotateAnim_3s_linear_infinite] */
+.anim_container {
+  position: absolute;
+  top: 60px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
