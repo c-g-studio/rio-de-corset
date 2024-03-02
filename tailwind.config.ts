@@ -29,6 +29,29 @@ const config: Config = {
         from: { transform: 'translateY(0)' },
         to: { transform: 'translateY(calc(-100% - 20px))' },
       },
+      rotateAnim: {
+        '0%': {
+          // eslint-disable-next-line sonarjs/no-duplicate-string
+          transform: 'rotate(0deg)',
+        },
+        '50%': {
+          transform: 'rotate(30deg)',
+        },
+        '100%': {
+          transform: 'rotate(0deg)',
+        },
+      },
+      revertRotateAnim: {
+        '0%': {
+          transform: 'rotate(0deg)',
+        },
+        '50%': {
+          transform: 'rotate(-30deg)',
+        },
+        '100%': {
+          transform: 'rotate(0deg)',
+        },
+      },
     },
     screens: {
       sm: '375px',

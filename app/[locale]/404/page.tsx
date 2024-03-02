@@ -1,5 +1,6 @@
 import initTranslations from '@/app/i18n';
 import TranslationsProvider from '@/components/i18n/TranslationsProvider';
+import { NotFoundComponent } from '@/components/pages/notFound/NotFoundComponent';
 import { NextPage } from 'next/types';
 
 const i18nNamespaces = ['notFound'];
@@ -8,7 +9,7 @@ interface NextPageProps {
   params: { locale: string; id: string };
 }
 
-const Page: NextPage<NextPageProps> = async ({ params: { locale, id } }) => {
+const Page: NextPage<NextPageProps> = async ({ params: { locale } }) => {
   const { t, resources } = await initTranslations(locale, i18nNamespaces);
   return (
     <TranslationsProvider
@@ -16,8 +17,11 @@ const Page: NextPage<NextPageProps> = async ({ params: { locale, id } }) => {
       locale={locale}
       resources={resources}
     >
-      <h1 className="mt-32 text-[200px]">{t('sorry')}</h1>
-      <p className="text-activeColor">This product ID - {id}</p>
+      <NotFoundComponent
+        sorry={t('sorry')}
+        notFound={t('notFound')}
+        back={t('goBack')}
+      />
     </TranslationsProvider>
   );
 };
