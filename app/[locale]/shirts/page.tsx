@@ -4,7 +4,6 @@ import TranslationsProvider from '@/components/i18n/TranslationsProvider';
 import { ProductList } from '@/components/common/ProductList/ProductList';
 import { useState, useEffect } from 'react';
 import { AnimateTitle } from '@/components/common/AnimateTitle/AnimateTitle';
-
 const i18nNamespaces = ['shirts'];
 
 interface NextPageProps {

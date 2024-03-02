@@ -12,7 +12,8 @@ export const Footer: FC = ({ ...props }) => {
         <ul className="flex justify-center gap-4">
           <li>
             <Link
-              href="/"
+              href="https://www.instagram.com/rio.de.corset/?igsh=eTczcWtudGc0Z3Mx"
+              target="_blank"
               title="link to instagram"
               className="stroke-whiteColor transition-colors hover:stroke-activeColor focus:stroke-activeColor active:stroke-activeColor"
             >
@@ -23,7 +24,8 @@ export const Footer: FC = ({ ...props }) => {
           </li>
           <li>
             <Link
-              href="/"
+              href="https://www.tiktok.com/@li.kovalska?_t=8iubzgR2QhJ&_r=1&fbclid=PAAabQNTrvBLWnISZOU6pdr0t1VHHRJtsu4IpcG4t028mZilgTzhR7247wuhE_aem_Ac2eBdizbdxWtj79EfTGusny38lTHmtv97gDtZHZK4_9gry8-s4Ceg__IYuoydDW44o"
+              target="_blank"
               title="link to linkedin"
               className="fill-whiteColor stroke-whiteColor transition-colors hover:fill-activeColor hover:stroke-activeColor focus:fill-activeColor focus:stroke-activeColor active:fill-activeColor active:stroke-activeColor"
             >
@@ -34,7 +36,7 @@ export const Footer: FC = ({ ...props }) => {
           </li>
         </ul>
         <Link
-          href="/"
+          href="mailto:rio.de.corset@gmail.com"
           className="text-xs uppercase text-whiteColor transition-colors hover:text-activeColor focus:text-activeColor active:text-activeColor active:underline md:text-base"
         >
           rio.de.corset@gmail.com

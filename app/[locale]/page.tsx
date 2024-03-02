@@ -5,8 +5,11 @@ import { CorsetsAnimate } from '@/components/pages/home/CorsetsAnimate/CorsetsAn
 import { Hero } from '@/components/pages/home/Hero/Hero';
 import { Shirts } from '@/components/pages/home/Shirts/Shirts';
 import { NextPage } from 'next/types';
-// import { ordersAPI } from '@/services/ordersAPI'
-// import { productsAPI } from '@/services/productsAPI';
+
+export const metadata = {
+  title: 'Rio de corset',
+  description: `Ласкаво просимо до світу елегантності та стилю! Ми пропонуємо вам вишукані корсети та сорочки високої якості. Наші моделі створені, щоб підкреслити вашу жіночність та витончений смак. Обирайте з багатого асортименту, де представлені класичні та сміливі стилі. Ми пишаємося своїм обслуговуванням та готові надати вам приємний досвід покупок. Обирайте красу та якість разом з нами!`,
+};
 
 const i18nNamespaces = ['home'];
 

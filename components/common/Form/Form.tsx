@@ -43,7 +43,7 @@ export const Form: FC<FormProps> = ({ totalPrice, products }) => {
     formState: { errors },
   } = useForm<Inputs>({
     criteriaMode: 'all',
-    mode: 'onChange',
+    mode: 'onSubmit',
     resolver: zodResolver(
       isUkraineDelivery
         ? validationUkraineOrderSchema
@@ -104,7 +104,6 @@ export const Form: FC<FormProps> = ({ totalPrice, products }) => {
 
   return (
     <>
-      {' '}
       <form
         className=" mb-[22px] w-full max-w-md md:max-w-full lg:m-0 lg:w-[700px]"
         onSubmit={handleSubmit(onSubmit)}
@@ -180,7 +179,7 @@ export const Form: FC<FormProps> = ({ totalPrice, products }) => {
             </Label>
           </div>
 
-          <div className=" md:w-[50%]">
+          <div className="mb-4 md:w-[50%] lg:mb-0">
             <h2 className="mb-4 text-xl font-semibold uppercase tracking-[.04em] text-blackColor md:mb-6">
               {t('deliveryTitle')}
             </h2>

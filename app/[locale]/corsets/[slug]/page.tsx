@@ -8,6 +8,16 @@ interface NextPageProps {
   params: { locale: string; slug: string };
 }
 
+interface MetadataProps {
+  searchParams: { name: string };
+}
+
+export const generateMetadata = ({ searchParams }: MetadataProps) => {
+  return {
+    title: `Rio de corset | ${searchParams.name}`,
+  };
+};
+
 const Page: NextPage<NextPageProps> = async ({ params: { locale, slug } }) => {
   const { resources } = await initTranslations(locale, i18nNamespaces);
   return (

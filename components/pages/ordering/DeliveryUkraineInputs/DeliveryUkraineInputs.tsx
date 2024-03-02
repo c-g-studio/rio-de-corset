@@ -44,11 +44,11 @@ export const DeliveryUkraineInputs: FC<Props> = ({
         />
       </Label>
 
-      <Label
-        labelText={t('deliveryMethod')}
-        className="mb-4 flex flex-col uppercase"
-      >
-        <div className=" z-20">
+      <div className="mb-4">
+        <span className="mb-1 block text-sm font-medium uppercase tracking-[.04em] text-blackColor md:text-base">
+          {t('deliveryMethod')}
+        </span>
+        <div className="z-20">
           <Listbox value={selected} onChange={setSelected}>
             <div className="relative ">
               <Listbox.Button
@@ -73,11 +73,17 @@ export const DeliveryUkraineInputs: FC<Props> = ({
               </Listbox.Button>
               <Transition
                 as={Fragment}
-                leave="transition ease-in duration-100"
-                leaveFrom="opacity-100"
-                leaveTo="opacity-0"
+                enter="transition duration-300 ease-out"
+                enterFrom="transform translate-y-[-24px] opacity-0 z-1"
+                enterTo="transform scale-100 opacity-100"
+                leave="transition duration-300 ease-out"
+                leaveFrom="transform scale-100 opacity-100"
+                leaveTo="transform translate-y-[-24px] opacity-0 z-1"
               >
-                <Listbox.Options className="bg-white  border-ac absolute z-10 mt-1 max-h-60 w-full overflow-auto  border-[1px]  bg-whiteColor text-base shadow-lg focus:outline-none sm:text-sm">
+                <Listbox.Options
+                  className="bg-white  border-ac absolute z-10 mt-1 max-h-60 w-full overflow-auto  border-[1px]  bg-whiteColor text-base shadow-lg focus:outline-none sm:text-sm"
+                  onClick={toggleDropdown}
+                >
                   {people.map((person, personIndex) => (
                     <Listbox.Option
                       key={personIndex}
@@ -108,7 +114,7 @@ export const DeliveryUkraineInputs: FC<Props> = ({
             </div>
           </Listbox>
         </div>
-      </Label>
+      </div>
 
       <Label labelText={t('postNumber')} className="flex flex-col uppercase">
         <Input
