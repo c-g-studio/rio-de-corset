@@ -17,8 +17,8 @@ import { DeliveryUkraineInputs } from '@/components/pages/ordering/DeliveryUkrai
 import { DeliveryWorldInputs } from '@/components/pages/ordering/DeliveryWorldInputs/DeliveryWorldInputs';
 
 import { FormProps, Inputs } from './Form.types';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ErrorModal } from '@/components/common/Modals/ErrorModal/ErrorModal';
+import { SuccessModal } from '@/components/common/Modals/SuccessModal/SuccessModal';
 
 const ukraineOrderType = {
   uk: 'по Україні',
@@ -32,8 +32,19 @@ export const Form: FC<FormProps> = ({ totalPrice, products }) => {
   const people = [{ name: t('novaPost') }, { name: t('ukrPost') }];
   const [orderType, setOrderType] = useState(ukraineOrderType.uk);
   const [selected, setSelected] = useState(people[0]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isError, setIsError] = useState(false);
+
   const isUkraineDelivery =
     orderType === ukraineOrderType.uk || orderType === ukraineOrderType.en;
+
+  const modalSuccessToggler = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const modalErrorToggler = () => {
+    setIsError(!isOpen);
+  };
 
   const {
     watch,
@@ -74,14 +85,14 @@ export const Form: FC<FormProps> = ({ totalPrice, products }) => {
 
       if (isUkraineDelivery) {
         await ordersAPI.addUkraineOrder(request);
-        toast.success(t('successOrder'));
+        modalSuccessToggler();
         return;
       }
 
       await ordersAPI.addWorldOrder(request);
-      toast.success(t('successOrder'));
+      modalSuccessToggler();
     } catch {
-      toast.error(t('errorOrder'));
+      setIsError(!isError);
     }
   };
 
@@ -195,7 +206,8 @@ export const Form: FC<FormProps> = ({ totalPrice, products }) => {
           {t('order')}
         </Button>
       </form>
-      <ToastContainer />
+      <SuccessModal isOpen={isOpen} modalToggler={modalSuccessToggler} />
+      <ErrorModal isError={isError} modalToggler={modalErrorToggler} />
     </>
   );
 };

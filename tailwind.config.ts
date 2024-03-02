@@ -80,6 +80,8 @@ const config: Config = {
       greyColor: '#f1f1f1',
       orderHover: 'rgba(217, 217, 217, 0.2)',
       continueHover: 'rgba(79, 79, 79, 0.44)',
+      fuckingModalBackdrop: 'rgba(0, 0, 0, 0.2)',
+      modalTextBg: '#FFE2E2',
     },
   },
   plugins: [require('@tailwindcss/forms'), require('@headlessui/tailwindcss')],
