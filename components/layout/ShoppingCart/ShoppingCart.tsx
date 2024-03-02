@@ -78,7 +78,7 @@ export const ShoppingCart: FC<ShoppingCartProps> = ({ locale }) => {
       {isOpen && (
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
         <div
-          className={`bg-backdropColor fixed left-0 top-0 block h-[100%] w-[100%]`}
+          className={`fixed left-0 top-0 block h-[100%] w-[100%] bg-backdropColor`}
           onClick={() => setIsOpen(false)}
         ></div>
       )}
