@@ -24,7 +24,7 @@ export const OrderBlock: FC<OrderBlockProps> = ({ price, setIsOpen }) => {
       </p>
       <Link
         href="/ordering"
-        className="mb-4 border border-blackColor bg-blackColor py-[14px] text-center text-base font-medium uppercase tracking-[0.04em] text-whiteColor transition hover:bg-orderHover focus:bg-orderHover active:bg-orderHover md:py-3 md:text-lg md:tracking-[0.08em]"
+        className="mb-4 border border-blackColor bg-blackColor py-[14px] text-center text-base font-medium uppercase tracking-[0.04em] text-whiteColor transition hover:bg-orderHoverLink focus:bg-orderHoverLink active:bg-orderHoverLink md:py-3 md:text-lg md:tracking-[0.08em]"
       >
         {t('complete')}
       </Link>
