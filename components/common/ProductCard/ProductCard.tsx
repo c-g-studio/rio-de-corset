@@ -42,7 +42,7 @@ export const ProductCard: FC<ProductCardProps> = ({
       className={`${s.productCard} relative md:w-[328px] lg:w-[392px]`}
     >
       <Link
-        href={`/${category}/${id}`}
+        href={`/${category}/${id}?name=${name}`}
         className={`${s.shoppingCartHover} group block w-full bg-activeCardColor p-2 transition-colors duration-300 ease-in lg:bg-whiteColor lg:hover:bg-activeCardColor lg:focus:bg-activeCardColor`}
       >
         <div className="mb-4 flex h-[320px] items-center justify-center overflow-hidden bg-whiteColor md:h-[400px]">

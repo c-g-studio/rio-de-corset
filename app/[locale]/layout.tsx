@@ -2,7 +2,6 @@ import TranslationsProvider from '@/components/i18n/TranslationsProvider';
 import { classnames } from '@/utils/classnames';
 import '@/utils/generateStaticParameters';
 import { dir } from 'i18next';
-import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 import { Footer } from '../../components/layout/Footer';
 import { Header } from '../../components/layout/Header';
@@ -11,9 +10,9 @@ import { ContextWrapper } from './ContextWrapper';
 import { montserrat } from './fonts';
 import './globals.css';
 
-export const metadata: Metadata = {
-  title: 'Next.js Starter',
-  description: 'A starter for Next.js projects.',
+export const metadata = {
+  title: 'Rio de corset ',
+  description: `Ласкаво просимо до світу елегантності та стилю! Ми пропонуємо вам вишукані корсети та сорочки високої якості. Наші моделі створені, щоб підкреслити вашу жіночність та витончений смак. Обирайте з багатого асортименту, де представлені класичні та сміливі стилі. Ми пишаємося своїм обслуговуванням та готові надати вам приємний досвід покупок. Обирайте красу та якість разом з нами!`,
 };
 
 type Props = {
