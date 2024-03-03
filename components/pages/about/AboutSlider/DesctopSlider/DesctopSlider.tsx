@@ -31,7 +31,7 @@ export const DesctopSlider: FC = () => {
           },
         }}
         modules={[Mousewheel, Pagination]}
-        className="mySwiper"
+        className="mySwiper select-none"
       >
         <SwiperSlide className="w-[644px]">
           <div className="mb-6 items-center lg:mb-0 lg:flex lg:gap-6">
@@ -42,8 +42,8 @@ export const DesctopSlider: FC = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="about_desc_slide">
-          <div className="text-base">
-            <p>{t('slideOneOne')}</p>
+          <div className="w-[310px] text-base">
+            <p className="mb-5">{t('slideOneOne')}</p>
             <p>{t('slideOneTwo')}</p>
           </div>
           <Image
@@ -56,8 +56,8 @@ export const DesctopSlider: FC = () => {
           />
         </SwiperSlide>
         <SwiperSlide className="about_desc_slide">
-          <div className="text-base">
-            <p>{t('slideTwoOne')}</p>
+          <div className="w-[310px] text-base">
+            <p className="mb-6">{t('slideTwoOne')}</p>
             <p>{t('slideTwoTwo')}</p>
           </div>
           <Image
@@ -70,7 +70,7 @@ export const DesctopSlider: FC = () => {
           />
         </SwiperSlide>
         <SwiperSlide className="about_desc_slide">
-          <div className="text-base">
+          <div className="w-[310px] text-base">
             <p>{t('slideThree')}</p>
           </div>
           <AboutVideo />

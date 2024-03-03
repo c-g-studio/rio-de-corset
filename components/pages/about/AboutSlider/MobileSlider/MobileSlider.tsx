@@ -31,11 +31,11 @@ export const MobSlider: FC = () => {
           },
         }}
         modules={[Mousewheel, Pagination]}
-        className="mySwiper"
+        className="mySwiper select-none"
       >
         <SwiperSlide className="w-[644px]">
           <div className="text-sm md:text-base">
-            <p>{t('slideOneOne')}</p>
+            <p className="mb-5">{t('slideOneOne')}</p>
             <p>{t('slideOneTwo')}</p>
           </div>
         </SwiperSlide>
@@ -51,7 +51,7 @@ export const MobSlider: FC = () => {
         </SwiperSlide>
         <SwiperSlide className="about_desc_slide">
           <div className="text-base">
-            <p>{t('slideTwoOne')}</p>
+            <p className="mb-5">{t('slideTwoOne')}</p>
             <p>{t('slideTwoTwo')}</p>
           </div>
         </SwiperSlide>
