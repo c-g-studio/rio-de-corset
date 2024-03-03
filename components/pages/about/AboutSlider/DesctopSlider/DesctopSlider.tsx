@@ -33,7 +33,7 @@ export const DesctopSlider: FC = () => {
         modules={[Mousewheel, Pagination]}
         className="mySwiper select-none"
       >
-        <SwiperSlide className="w-[644px]">
+        <SwiperSlide className="w-[644px] ">
           <div className="mb-6 items-center lg:mb-0 lg:flex lg:gap-6">
             <h1 className="mb-4 whitespace-nowrap text-2xl/[1.5] font-light uppercase md:mb-6 md:text-[40px]/[1.5] lg:mb-0 lg:text-6xl/[1]">
               {t('title')}
@@ -41,8 +41,8 @@ export const DesctopSlider: FC = () => {
             <Arrow className=" w-[310px] md:w-[262px] lg:w-[310px]" />
           </div>
         </SwiperSlide>
-        <SwiperSlide className="about_desc_slide">
-          <div className="w-[310px] text-base">
+        <SwiperSlide className="about_desc_slide ">
+          <div className="w-[310px] text-base lg:leading-5">
             <p className="mb-5">{t('slideOneOne')}</p>
             <p>{t('slideOneTwo')}</p>
           </div>
@@ -56,7 +56,7 @@ export const DesctopSlider: FC = () => {
           />
         </SwiperSlide>
         <SwiperSlide className="about_desc_slide">
-          <div className="w-[310px] text-base">
+          <div className="w-[310px] text-base lg:leading-5">
             <p className="mb-6">{t('slideTwoOne')}</p>
             <p>{t('slideTwoTwo')}</p>
           </div>
@@ -69,7 +69,7 @@ export const DesctopSlider: FC = () => {
             className="w-[100%] md:h-[340px] md:w-[310px]"
           />
         </SwiperSlide>
-        <SwiperSlide className="about_desc_slide">
+        <SwiperSlide className="about_desc_slide lg:leading-5">
           <div className="w-[310px] text-base">
             <p>{t('slideThree')}</p>
           </div>
