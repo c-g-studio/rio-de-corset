@@ -48,7 +48,7 @@ export const Footer: FC = ({ ...props }) => {
         <ul className="flex flex-col justify-center gap-4 md:flex-row md:gap-6">
           <li>
             <Link
-              href="/"
+              href="/docs/politice.docx"
               className="text-xs text-whiteColor underline transition-colors hover:text-activeColor focus:text-activeColor active:text-activeColor md:text-base"
             >
               Політика конфіденційності
