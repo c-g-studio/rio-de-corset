@@ -21,7 +21,7 @@ export const MobSlider: FC = () => {
         mousewheel={true}
         breakpoints={{
           320: {
-            slidesPerView: 1.2,
+            slidesPerView: 1.1,
           },
           768: {
             slidesPerView: 2,
