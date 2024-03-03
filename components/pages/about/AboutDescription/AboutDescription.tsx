@@ -20,7 +20,7 @@ export const AboutDescription: FC<AboutProps> = ({ locale }) => {
             </span>
             <span className="inline-block md:w-[470px]">{t('subtitle')}</span>
           </p>
-          <div>
+          <div className="normal-case">
             <p className="text-base/[1.6] md:text-lg/[1.6] lg:text-[22px]/[1.6]">
               {t('description')}
             </p>
