@@ -237,34 +237,16 @@ export const CorsetsAnimate: FC = () => {
           <ul className="flex shrink-0 animate-[rowAnim_30s_linear_infinite] flex-row justify-between">
             <li className="shrink-0">
               <Image
-                src="/image/corsetsAnimate/top/01.png"
-                width={208}
-                height={183}
-                alt="corset"
-                className="sm:w-[160px] md:w-[208px]"
-              />
-            </li>
-            <li className="shrink-0">
-              <Image
-                src="/image/corsetsAnimate/top/02.png"
-                width={208}
-                height={183}
-                alt="corset"
-                className="sm:w-[160px] md:w-[208px]"
-              />
-            </li>
-            <li className="shrink-0">
-              <Image
-                src="/image/corsetsAnimate/top/03.png"
-                width={208}
-                height={183}
-                alt="corset"
-                className="sm:w-[160px] md:w-[208px]"
-              />
-            </li>
-            <li className="shrink-0">
-              <Image
                 src="/image/corsetsAnimate/top/04.png"
+                width={208}
+                height={183}
+                alt="corset"
+                className="sm:w-[160px] md:w-[208px]"
+              />
+            </li>
+            <li className="shrink-0">
+              <Image
+                src="/image/corsetsAnimate/top/06.png"
                 width={208}
                 height={183}
                 alt="corset"
@@ -282,7 +264,25 @@ export const CorsetsAnimate: FC = () => {
             </li>
             <li className="shrink-0">
               <Image
-                src="/image/corsetsAnimate/top/06.png"
+                src="/image/corsetsAnimate/top/02.png"
+                width={208}
+                height={183}
+                alt="corset"
+                className="sm:w-[160px] md:w-[208px]"
+              />
+            </li>
+            <li className="shrink-0">
+              <Image
+                src="/image/corsetsAnimate/top/01.png"
+                width={208}
+                height={183}
+                alt="corset"
+                className="sm:w-[160px] md:w-[208px]"
+              />
+            </li>
+            <li className="shrink-0">
+              <Image
+                src="/image/corsetsAnimate/top/03.png"
                 width={208}
                 height={183}
                 alt="corset"
@@ -293,34 +293,16 @@ export const CorsetsAnimate: FC = () => {
           <ul className="flex shrink-0 animate-[rowAnim_30s_linear_infinite] flex-row justify-between">
             <li className="shrink-0">
               <Image
-                src="/image/corsetsAnimate/top/01.png"
-                width={208}
-                height={183}
-                alt="corset"
-                className="sm:w-[160px] md:w-[208px]"
-              />
-            </li>
-            <li className="shrink-0">
-              <Image
-                src="/image/corsetsAnimate/top/02.png"
-                width={208}
-                height={183}
-                alt="corset"
-                className="sm:w-[160px] md:w-[208px]"
-              />
-            </li>
-            <li className="shrink-0">
-              <Image
-                src="/image/corsetsAnimate/top/03.png"
-                width={208}
-                height={183}
-                alt="corset"
-                className="sm:w-[160px] md:w-[208px]"
-              />
-            </li>
-            <li className="shrink-0">
-              <Image
                 src="/image/corsetsAnimate/top/04.png"
+                width={208}
+                height={183}
+                alt="corset"
+                className="sm:w-[160px] md:w-[208px]"
+              />
+            </li>
+            <li className="shrink-0">
+              <Image
+                src="/image/corsetsAnimate/top/06.png"
                 width={208}
                 height={183}
                 alt="corset"
@@ -338,7 +320,25 @@ export const CorsetsAnimate: FC = () => {
             </li>
             <li className="shrink-0">
               <Image
-                src="/image/corsetsAnimate/top/06.png"
+                src="/image/corsetsAnimate/top/02.png"
+                width={208}
+                height={183}
+                alt="corset"
+                className="sm:w-[160px] md:w-[208px]"
+              />
+            </li>
+            <li className="shrink-0">
+              <Image
+                src="/image/corsetsAnimate/top/01.png"
+                width={208}
+                height={183}
+                alt="corset"
+                className="sm:w-[160px] md:w-[208px]"
+              />
+            </li>
+            <li className="shrink-0">
+              <Image
+                src="/image/corsetsAnimate/top/03.png"
                 width={208}
                 height={183}
                 alt="corset"
