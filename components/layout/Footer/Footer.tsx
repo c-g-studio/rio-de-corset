@@ -48,7 +48,7 @@ export const Footer: FC = ({ ...props }) => {
         <ul className="flex flex-col justify-center gap-4 md:flex-row md:gap-6">
           <li>
             <Link
-              href="/docs/politice.docx"
+              href="/docs/policy.docx"
               className="text-xs text-whiteColor underline transition-colors hover:text-activeColor focus:text-activeColor active:text-activeColor md:text-base"
             >
               Політика конфіденційності
@@ -56,7 +56,7 @@ export const Footer: FC = ({ ...props }) => {
           </li>
           <li>
             <Link
-              href="/"
+              href="/docs/offer.docx"
               className="text-xs text-whiteColor underline transition-colors  hover:text-activeColor focus:text-activeColor active:text-activeColor md:text-base"
             >
               Публічна оферта
